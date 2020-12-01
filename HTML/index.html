@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<meta charset="utf-8">
+
+<head>
+  <title>CDF test!</title>
+  <!-- from http://bl.ocks.org/jdittmar/7800481 -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="map">
+    <div class="line one"></div>
+    <div class="box one" onclick="resizeViews.expand('one')">
+      <div class="cover">Predicting Stock Prices</div>
+    </div>
+    <div class="line two"></div>
+    <div class="box two" onclick="resizeViews.expand('two')">
+      <div class="cover">Workflow</div>
+    </div>
+    <div class="line three"></div>
+    <div class="box three" onclick="resizeViews.expand('three')">
+      <div class="cover">Initial Results</div>
+    </div>
+    <div class="line four"></div>
+    <div class="box four" onclick="resizeViews.expand('four')">
+      <div class="cover">Visualization of Takeaways</div>
+    </div>
+    <div class="line five"></div>
+    <div class="box five" onclick="resizeViews.expand('five')">
+      <div class="cover">Profit</div>
+    </div>
+  </div>
+  <div class="background-image"></div>
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

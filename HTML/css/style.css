@@ -1,0 +1,108 @@
+* {
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  /* font-size: 100%; */
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  /* text-shadow: 0px 1px 2px #111; */
+  vertical-align: baseline;
+}
+
+text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 108px;
+  opacity: 90%;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 192px;
+}
+
+.map {
+  position: fixed;
+}
+
+.box.one {
+  left: 236px;
+  top: 161px;
+}
+
+.box.two {
+  left: 453px;
+  top: 353px;
+}
+
+.box.three {
+  left: 642px;
+  top: 542px;
+}
+
+.box.four {
+  left: 832px;
+  top: 275px;
+}
+
+.box.five {
+  left: 1083px;
+  top: 117px;
+}
+
+.line {
+  border: 1px solid black;
+  position: absolute;
+  width: 0px;
+}
+
+.line.one {
+  height: 526px;
+  left: 332px;
+  top: 269px;
+}
+
+.line.two {
+  height: 259px;
+  left: 549px;
+  top: 461px;
+}
+
+.line.three {
+  height: 154px;
+  left: 738px;
+  top: 650px;
+}
+
+.line.four {
+  height: 427px;
+  left: 928px;
+  top: 383px;
+}
+
+.line.five {
+  height: 522px;
+  left: 1179px;
+  top: 225px;
+}
+
+.cover {
+  font-size: 24px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.background-image {
+  background-image: url("../images/grid_plot.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
