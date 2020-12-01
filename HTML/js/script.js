@@ -62,6 +62,8 @@ const resizeViews = {
       .ease(d3.easeExpInOut)
       .style('left', '0%')
       .style('top', '0%')
+      .style('width', '0px')
+      .style('height', '0px')
       .style('font-size', '0px');
   },
 
@@ -72,6 +74,8 @@ const resizeViews = {
       .ease(d3.easeExpInOut)
       .style('left', '50%')
       .style('top', '50%')
+      .style('height', '108px')
+      .style('width', '192px')
       .style('font-size', '24px');
 
     d3.select('.active')
@@ -95,6 +99,16 @@ const resizeViews = {
       .style('left', left + "px")
       .style('top', top + "px");
   },
+}
+
+const getChart = () => {
+  const cb = data => {
+    console.log(data);
+  }
+
+  const data = { 'text': 'hello' };
+
+  d3.send('GET', data, cb);
 }
 
 const checkKey = e => {

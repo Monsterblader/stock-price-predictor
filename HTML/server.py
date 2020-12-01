@@ -11,7 +11,7 @@ def hello_world():
 
 @app.route('/favicon.ico')  # the site to route to, index/main in this case
 def send_favicon():
-    return send_from_directory('./', 'favicon.ico')
+    return send_from_directory('images', 'favicon.ico')
 
 
 @app.route('/css/<path:path>')

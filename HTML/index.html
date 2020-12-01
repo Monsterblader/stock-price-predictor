@@ -3,38 +3,108 @@
 <meta charset="utf-8">
 
 <head>
-  <title>CDF test!</title>
-  <!-- from http://bl.ocks.org/jdittmar/7800481 -->
+  <title>Predicting Stock Prices</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <div class="map">
+
     <div class="line one"></div>
     <div class="box one" onclick="resizeViews.expand('one')">
-      <div class="cover">Predicting Stock Prices</div>
+      <div class="cover"><span class="cover-text">Predicting Stock Prices</span></div>
+      <div class="contents">
+        <h1 class="title">
+          Bull or Bear?
+          <br />
+          Predicting Stock-Market Prices
+        </h1>
+        <dh3 class="sub-title">Using LSTM to predict stock prices.</dh3>
+      </div>
     </div>
+
     <div class="line two"></div>
     <div class="box two" onclick="resizeViews.expand('two')">
-      <div class="cover">Workflow</div>
+      <div class="cover"><span class="cover-text">Workflow</span></div>
+      <div class="contents">
+        <img class="yahoo" src="https://s.yimg.com/rz/p/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
+        <img class="LSTM" src="https://upload.wikimedia.org/wikipedia/commons/5/56/LSTM_cell.svg" />
+        <img class="chart" src="images/TSLA-shift-10.svg" />
+      </div>
     </div>
+
     <div class="line three"></div>
     <div class="box three" onclick="resizeViews.expand('three')">
-      <div class="cover">Initial Results</div>
+      <div class="cover"><span class="cover-text">Initial Results</span></div>
+      <div class="contents">
+        <figure>
+          <img src="images/TSLA-shift-10.svg" />
+          <figcaption>10: Accuracy Score: 0.726</figcaption>
+        </figure>
+        <figure>
+          <img src="images/GE-shift-10.svg" />
+          <figcaption>10: Accuracy Score: 0.892</figcaption>
+        </figure>
+      </div>
     </div>
+
     <div class="line four"></div>
     <div class="box four" onclick="resizeViews.expand('four')">
-      <div class="cover">Visualization of Takeaways</div>
+      <div class="cover"><span class="cover-text">Takeaways</span></div>
+      <div class="contents">
+        What impact do indicators have on prediction?
+      </div>
     </div>
+
     <div class="line five"></div>
     <div class="box five" onclick="resizeViews.expand('five')">
-      <div class="cover">Profit</div>
+      <div class="cover"><span class="cover-text">Profit</span></div>
+      <div class="contents">
+        <div class="parameters">
+          <input id="ticker-symbol" type="text" placeholder="Enter ticker symbol" />
+
+          <div class="indicators">
+            <div class="border">
+              <div class="title">Indicators:</div>
+              <div class="checkbox-group">
+                <input id="moving-average-50" class="checkbox" type="checkbox" />
+                <label for="moving-average-50">50-day moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="moving-average-200" class="checkbox" type="checkbox" />
+                <label for="moving-average-200">200-day moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="RSI" class="checkbox" type="checkbox" />
+                <label for="RSI">Relative-strength index</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="percent-R" class="checkbox" type="checkbox" />
+                <label for="percent-R">Williams' %R</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="bollinger-bands" class="checkbox" type="checkbox" />
+                <label for="bollinger-bands">Bollinger bands</label>
+              </div>
+            </div>
+          </div>
+
+          <div id="get-prediction" class="btn" onclick="getChart()">Go!</div>
+        </div>
+        <div class="chart">
+
+        </div>
+      </div>
     </div>
   </div>
   <div class="background-image"></div>
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
-
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
