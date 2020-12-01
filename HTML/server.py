@@ -39,5 +39,12 @@ def send_media(path):
     return send_from_directory('media', path)
 
 
+@app.route('/getprediction')
+def get_prediction():
+    # return predict_personality(request.args.to_dict()['content'])
+    print(request.args.to_dict())
+    return "hello there"
+
+
 # This just gets flask running
 app.run(port=5000, debug=True)

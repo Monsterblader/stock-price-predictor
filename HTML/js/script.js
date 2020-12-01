@@ -106,9 +106,25 @@ const getChart = () => {
     console.log(data);
   }
 
-  const data = { 'text': 'hello' };
+  const getParameters = () => {
+    const params = {
+      ticker: $('#ticker-symbol')[0].value,
+      ma50: $('#moving-average-50')[0].checked,
+      ma200: $('#moving-average-50')[0].checked,
+      RSI: $('#RSI')[0].checked,
+      percR: $('#percent-R')[0].checked,
+      bolBands: $('#bollinger-bands')[0].checked,
+    }
 
-  d3.send('GET', data, cb);
+    return params;
+  }
+
+  $.ajax({
+    url: "getprediction",
+    type: "get",
+    data: getParameters(),
+    success: cb,
+  });
 }
 
 const checkKey = e => {
