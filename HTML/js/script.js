@@ -72,8 +72,7 @@ const resizeViews = {
       .transition()
       .duration(1000)
       .ease(d3.easeExpInOut)
-      .style('left', '50%')
-      .style('top', '50%')
+      .style('top', '0px')
       .style('height', '108px')
       .style('width', '192px')
       .style('font-size', '24px');
@@ -103,41 +102,16 @@ const resizeViews = {
 
 const getChart = () => {
   const cb = data => {
-    // const data = [{
-    //     name: "A",
-    //     x: 10,
-    //   }, {
-    //     name: "B",
-    //     x: 22,
-    //   }, {
-    //     name: "C",
-    //     x: 33,
-    //   }, {
-    //     name: "D",
-    //     x: 20,
-    //   }, {
-    //     name: "E",
-    //     x: 21,
-    //   },
-    // ];
+    const result = JSON.parse(JSON.parse(data).df);
+    const test = Object.values(result.test);
+    const pred = Object.values(result.pred);
+    const chart1 = [];
+    const chart2 = [];
 
-    // const data2 = [{
-    //     name: "A",
-    //     x: 11,
-    //   }, {
-    //     name: "B",
-    //     x: 23,
-    //   }, {
-    //     name: "C",
-    //     x: 34,
-    //   }, {
-    //     name: "D",
-    //     x: 25,
-    //   }, {
-    //     name: "E",
-    //     x: 26,
-    //   },
-    // ];
+    for (let i = 0, l = test.length; i < l; i += 1) {
+      chart1[i] = { index: i, val: test[i] };
+      chart2[i] = { index: i, val: pred[i] };
+    }
 
     //No.1 define the svg
     const graphWidth = 600,
@@ -161,8 +135,8 @@ const getChart = () => {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
 
-      //No.3 define axises
-      categoriesNames = data.map((d) => d.name),
+      //No.3 define axes
+      categoriesNames = chart1.map((d) => d.index),
       xScale = d3
         .scalePoint()
         .domain(categoriesNames)
@@ -170,19 +144,20 @@ const getChart = () => {
       yScale = d3
         .scaleLinear()
         .range([graphHeight, 0])
-        .domain([0, d3.max(data, (data) => data.x)]), //* If an arrow function is simply returning a single line of code, you can omit the statement brackets and the return keyword
+        .domain([0, d3.max(chart1, data => data.val)]), //* If an arrow function is simply returning a single line of code, you can omit the statement brackets and the return keyword
 
       //No.5 make lines
       line = d3
         .line()
         .x(function (d) {
-          return xScale(d.name);
+          return xScale(d.index);
         }) // set the x values for the line generator
         .y(function (d) {
-          return yScale(d.x);
+          return yScale(d.val);
         }); // set the y values for the line generator
         // .curve(d3.curveMonotoneX); // apply smoothing to the line
 
+    d3.select('#my_dataviz')._groups[0][0].innerHTML = "";
     //No.4 set axises
     mainGraph.append("g")
       .attr("class", "x axis")
@@ -194,13 +169,13 @@ const getChart = () => {
       .call(d3.axisLeft(yScale));
 
     mainGraph.append("path")
-      .datum(data) // 10. Binds data to the line
+      .datum(chart1) // 10. Binds data to the line
       .attr("class", "line") // Assign a class for styling
       .attr("d", line); // 11. Calls the line generator
 
     mainGraph.append("path")
-      .datum(data2) // 10. Binds data to the line
-      .attr("class", "line") // Assign a class for styling
+      .datum(chart2) // 10. Binds data to the line
+      .attr("class", "line2") // Assign a class for styling
       .attr("d", line); // 11. Calls the line generator
   } // end cb
 

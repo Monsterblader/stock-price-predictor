@@ -33,6 +33,22 @@ text {
   width: 192px;
 }
 
+.cover {
+  background-color: #fff;
+  display: table;
+  font-size: 24px;
+  height: 108px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+
+.cover-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .map {
   position: fixed;
 }
@@ -194,18 +210,9 @@ text {
   fill: none;
 }
 
-.cover {
-  background-color: #fff;
-  display: table;
-  font-size: 24px;
-  height: 108px;
-  width: 100%;
-  z-index: 10;
-}
-
-.cover-text {
-  display: table-cell;
-  vertical-align: middle;
+.box.five .line2 {
+  stroke: red;
+  fill: none;
 }
 
 .background-image {
