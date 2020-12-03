@@ -103,8 +103,106 @@ const resizeViews = {
 
 const getChart = () => {
   const cb = data => {
-    console.log(data);
-  }
+    // const data = [{
+    //     name: "A",
+    //     x: 10,
+    //   }, {
+    //     name: "B",
+    //     x: 22,
+    //   }, {
+    //     name: "C",
+    //     x: 33,
+    //   }, {
+    //     name: "D",
+    //     x: 20,
+    //   }, {
+    //     name: "E",
+    //     x: 21,
+    //   },
+    // ];
+
+    // const data2 = [{
+    //     name: "A",
+    //     x: 11,
+    //   }, {
+    //     name: "B",
+    //     x: 23,
+    //   }, {
+    //     name: "C",
+    //     x: 34,
+    //   }, {
+    //     name: "D",
+    //     x: 25,
+    //   }, {
+    //     name: "E",
+    //     x: 26,
+    //   },
+    // ];
+
+    //No.1 define the svg
+    const graphWidth = 600,
+      graphHeight = 450,
+      margin = {
+        top: 30,
+        right: 10,
+        bottom: 30,
+        left: 85
+      },
+      totalWidth = graphWidth + margin.left + margin.right,
+      totalHeight = graphHeight + margin.top + margin.bottom,
+      svg = d3
+        .select("#my_dataviz")
+        .append("svg")
+        .attr("width", totalWidth)
+        .attr("height", totalHeight),
+
+      //No.2 define mainGraph
+      mainGraph = svg
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
+
+      //No.3 define axises
+      categoriesNames = data.map((d) => d.name),
+      xScale = d3
+        .scalePoint()
+        .domain(categoriesNames)
+        .range([0, graphWidth]), // scalepoint make the axis starts with value compared with scaleBand
+      yScale = d3
+        .scaleLinear()
+        .range([graphHeight, 0])
+        .domain([0, d3.max(data, (data) => data.x)]), //* If an arrow function is simply returning a single line of code, you can omit the statement brackets and the return keyword
+
+      //No.5 make lines
+      line = d3
+        .line()
+        .x(function (d) {
+          return xScale(d.name);
+        }) // set the x values for the line generator
+        .y(function (d) {
+          return yScale(d.x);
+        }); // set the y values for the line generator
+        // .curve(d3.curveMonotoneX); // apply smoothing to the line
+
+    //No.4 set axises
+    mainGraph.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + graphHeight + ")")
+      .call(d3.axisBottom(xScale));
+
+    mainGraph.append("g")
+      .attr("class", "y axis")
+      .call(d3.axisLeft(yScale));
+
+    mainGraph.append("path")
+      .datum(data) // 10. Binds data to the line
+      .attr("class", "line") // Assign a class for styling
+      .attr("d", line); // 11. Calls the line generator
+
+    mainGraph.append("path")
+      .datum(data2) // 10. Binds data to the line
+      .attr("class", "line") // Assign a class for styling
+      .attr("d", line); // 11. Calls the line generator
+  } // end cb
 
   const getParameters = () => {
     const params = {
@@ -125,7 +223,7 @@ const getChart = () => {
     data: getParameters(),
     success: cb,
   });
-}
+} // end getChart
 
 const checkKey = e => {
   const err = e || window.event;
@@ -141,3 +239,4 @@ const checkKey = e => {
 }
 
 document.onkeyup = checkKey;
+

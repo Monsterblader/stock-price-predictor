@@ -144,11 +144,16 @@ text {
   text-align: initial;
 }
 
+.box.five #ticker-symbol:hover {
+  cursor: text;
+}
+
 .box.five .parameters {
   background-color: lightgray;
   display: inline-block;
   height: 100vh;
   padding: 50px;
+  vertical-align: top;
 }
 
 .box.five .title {
@@ -178,8 +183,15 @@ text {
   cursor: pointer;
 }
 
-.box.five #ticker-symbol:hover {
-  cursor: text;
+.box.five .chart {
+  display: inline-block;
+  height: 100vh;
+  padding: 50px;
+}
+
+.box.five .line {
+  stroke: blue;
+  fill: none;
 }
 
 .cover {
