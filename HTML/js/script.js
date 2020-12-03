@@ -40,6 +40,16 @@ const resizeViews = {
     top: '117px',
   },
 
+  six: {
+    left: '976px',
+    top: '457px',
+  },
+
+  seven: {
+    left: '1413px',
+    top: '628px',
+  },
+
   expand: source => {
     const target = d3.select('.box.' + source);
     const cover = d3.select('.box.' + source + ' .cover');

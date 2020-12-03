@@ -146,13 +146,13 @@ text {
 }
 
 .line.five {
-  height: 522px;
-  left: 1179px;
+  height: 371px;
+  left: 1210px;
   top: 225px;
 }
 
 .box.five {
-  left: 1083px;
+  left: 1114px;
   top: 117px;
 }
 
@@ -213,6 +213,28 @@ text {
 .box.five .line2 {
   stroke: red;
   fill: none;
+}
+
+.line.six {
+  height: 252px;
+  left: 1072px;
+  top: 565px;
+}
+
+.box.six {
+  left: 976px;
+  top: 457px;
+}
+
+.line.seven {
+  height: 190px;
+  left: 1499px;
+  top: 438px;
+}
+
+.box.seven {
+  left: 1413px;
+  top: 628px;
 }
 
 .background-image {
