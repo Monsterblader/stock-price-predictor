@@ -1,3 +1,10 @@
+# Prediction files
+*.gz
+*.h5
+*.pb
+*.profile-empty
+*.v2
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
