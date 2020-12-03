@@ -34,7 +34,9 @@ text {
 }
 
 .cover {
-  background-color: #fff;
+  background-color: #eee;
+  border: 1px solid #111;
+  border-radius: 10px;
   display: table;
   font-size: 24px;
   height: 108px;
@@ -233,7 +235,7 @@ text {
 }
 
 .box.seven {
-  left: 1413px;
+  left: 1403px;
   top: 628px;
 }
 

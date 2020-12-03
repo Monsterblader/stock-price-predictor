@@ -36,7 +36,7 @@ const resizeViews = {
   },
 
   five: {
-    left: '1083px',
+    left: '1114px',
     top: '117px',
   },
 
@@ -46,7 +46,7 @@ const resizeViews = {
   },
 
   seven: {
-    left: '1413px',
+    left: '1403px',
     top: '628px',
   },
 
