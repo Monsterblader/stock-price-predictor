@@ -122,6 +122,7 @@ const getChart = () => {
       chart1[i] = { index: i, val: test[i] };
       chart2[i] = { index: i, val: pred[i] };
     }
+    d3.select('#my_dataviz')._groups[0][0].innerHTML = "";
 
     //No.1 define the svg
     const graphWidth = 600,
@@ -167,7 +168,6 @@ const getChart = () => {
         }); // set the y values for the line generator
         // .curve(d3.curveMonotoneX); // apply smoothing to the line
 
-    d3.select('#my_dataviz')._groups[0][0].innerHTML = "";
     //No.4 set axises
     mainGraph.append("g")
       .attr("class", "x axis")

@@ -31,9 +31,26 @@
     <div class="box two" onclick="resizeViews.expand('two')">
       <div class="cover"><span class="cover-text">Workflow</span></div>
       <div class="contents">
-        <img class="yahoo" src="https://s.yimg.com/rz/p/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
-        <img class="LSTM" src="https://upload.wikimedia.org/wikipedia/commons/5/56/LSTM_cell.svg" />
-        <img class="chart" src="images/TSLA-shift-10.svg" />
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <img class="yahoo" src="https://s.yimg.com/rz/p/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
+              </td>
+              <td>
+                <img class="LSTM" src="https://upload.wikimedia.org/wikipedia/commons/5/56/LSTM_cell.svg" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img class="indicators" src="https://miro.medium.com/max/4800/1*UPNJytGH9cFb4anA1b_KVQ.jpeg" />
+              </td>
+              <td>
+                <img class="chart" src="images/TSLA-shift-10.svg" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -42,12 +59,24 @@
       <div class="cover"><span class="cover-text">Initial Results</span></div>
       <div class="contents">
         <figure>
-          <img src="images/TSLA-shift-10.svg" />
-          <figcaption>10: Accuracy Score: 0.726</figcaption>
+          <h2>TSLA - Early Stop at 63 Epochs with Sequential Train-Test Split</h2>
+          <img src="images/TSLA.400.sequential.201203.svg" />
+          <figcaption>10: Accuracy Score: 0.447</figcaption>
         </figure>
         <figure>
-          <img src="images/GE-shift-10.svg" />
-          <figcaption>10: Accuracy Score: 0.892</figcaption>
+          <h2>TLSA - 400 Epochs with Random Train-Test Split</h2>
+          <img src="images/TSLA.400.random.201203.svg" />
+          <figcaption>10: Accuracy Score: 0.68</figcaption>
+        </figure>
+        <figure>
+          <h2>GE - Early Stop at 148 Epochs with Sequential Train-Test Split</h2>
+          <img src="images/GE.400.sequential.201203.svg" />
+          <figcaption>10: Accuracy Score: 0.53</figcaption>
+        </figure>
+        <figure>
+          <h2>GE - Early Stop at 96 Epochs with Random Train-Test Split</h2>
+          <img src="images/GE.400.random.201203.svg" />
+          <figcaption>10: Accuracy Score: 0.517</figcaption>
         </figure>
       </div>
     </div>
@@ -57,6 +86,46 @@
       <div class="cover"><span class="cover-text">Takeaways</span></div>
       <div class="contents">
         What impact do indicators have on prediction?
+        <ul>
+          <li>Adding indicators seems to reduce accuracy. They are derivative.</li>
+          <li>Model does not respond well to change in stock's character.</li>
+        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>N_STEPS</th>
+              <th>Early Stop</th>
+              <th>Accuracy Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>70</td>
+              <td>62</td>
+              <td>0.4</td>
+            </tr>
+            <tr>
+              <td>35</td>
+              <td>51</td>
+              <td>0.436</td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>58</td>
+              <td>0.437</td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td>61</td>
+              <td>0.424</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>58</td>
+              <td>0.424</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -86,10 +155,6 @@
                 <input id="percent-R" class="checkbox" type="checkbox" />
                 <label for="percent-R">Williams' %R</label>
               </div>
-              <div class="checkbox-group">
-                <input id="bollinger-bands" class="checkbox" type="checkbox" />
-                <label for="bollinger-bands">Bollinger bands</label>
-              </div>
             </div>
           </div>
 
@@ -105,7 +170,8 @@
     <div class="box six" onclick="resizeViews.expand('six')">
       <div class="cover"><span class="cover-text">What Are Options?</span></div>
       <div class="contents">
-        <div>Call option - </div>
+        <div>Call option - Personal Seat License</div>
+        <div>Put option - insurance</div>
       </div>
     </div>
 
@@ -119,6 +185,14 @@
           <li>Fix x-axis labels</li>
           <li>Add options profit predictions</li>
           <li>Add web-socket</li>
+          <li>Get all predictions from last closing date to predicted date and add to chart</li>
+          <li>Further explore random train-test split.</li>
+          <li>As indicators are derivatives, train model on them instead of stock prices.</li>
+          <li>Add table with model tuning scores - N_STEPS</li>
+          <li>Add backgrounds and format layout.</li>
+          <li>Run predictions with Facebook Prophet.
+            https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1</li>
+          <li>Add scores for indicators.</li>
         </ul>
       </div>
     </div>

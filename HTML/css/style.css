@@ -29,7 +29,6 @@ text {
   opacity: 90%;
   overflow: hidden;
   position: absolute;
-  text-align: center;
   width: 192px;
 }
 
@@ -48,6 +47,7 @@ text {
 
 .cover-text {
   display: table-cell;
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -67,6 +67,7 @@ text {
   background-repeat: no-repeat;
   background-size: cover;
   left: 236px;
+  text-align: center;
   top: 161px;
 }
 
@@ -101,23 +102,18 @@ text {
   top: 353px;
 }
 
-.box.two .yahoo {
-  /* position: absolute; */
-  top: 50%;
-  transform: translate(-50%, -100%);
+.box.two table {
+  margin: auto;
 }
 
-.box.two .LSTM {
-  /* position: absolute; */
-  top: 50%;
-  transform: translate(-50%, -50%);
+.box.two td {
+  margin: 25px;
 }
 
-.box.two .chart {
-  /* position: absolute; */
-  width: 400px;
-  top: 50%;
-  transform: translate(75%, -50%);
+.box.two img {
+  height: 400px;
+  margin: auto;
+  width: 500px;
 }
 
 .line.three {
@@ -147,6 +143,11 @@ text {
   top: 275px;
 }
 
+.box.four .contents {
+  font-size: 36px;
+  margin: 50px;
+}
+
 .line.five {
   height: 371px;
   left: 1210px;
@@ -156,10 +157,6 @@ text {
 .box.five {
   left: 1114px;
   top: 117px;
-}
-
-.box.five .contents {
-  text-align: initial;
 }
 
 .box.five #ticker-symbol:hover {
@@ -237,6 +234,11 @@ text {
 .box.seven {
   left: 1403px;
   top: 628px;
+}
+
+.box.seven .contents {
+  font-size: 36px;
+  margin: 50px;
 }
 
 .background-image {
