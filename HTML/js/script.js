@@ -187,6 +187,8 @@ const getChart = () => {
       .datum(chart2) // 10. Binds data to the line
       .attr("class", "line2") // Assign a class for styling
       .attr("d", line); // 11. Calls the line generator
+
+    $('#get-prediction')[0].innerText = 'Go!';
   } // end cb
 
   const getParameters = () => {
@@ -196,12 +198,12 @@ const getChart = () => {
       ma200: $('#moving-average-50')[0].checked,
       RSI: $('#RSI')[0].checked,
       percR: $('#percent-R')[0].checked,
-      bolBands: $('#bollinger-bands')[0].checked,
     }
 
     return params;
   }
 
+  $('#get-prediction')[0].innerText = 'Loading...';
   $.ajax({
     url: "getprediction",
     type: "get",

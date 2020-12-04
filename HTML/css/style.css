@@ -51,6 +51,16 @@ text {
   vertical-align: middle;
 }
 
+.disclaimer {
+  background-color: #eee;
+  border-radius: 5px;
+  bottom: 25px;
+  padding: 5px;
+  position: fixed;
+  right: 25px;
+  z-index: 100;
+}
+
 .map {
   position: fixed;
 }
@@ -110,8 +120,11 @@ text {
   margin: 25px;
 }
 
-.box.two img {
+.box.two tr {
   height: 400px;
+}
+
+.box.two td {
   margin: auto;
   width: 500px;
 }
@@ -146,6 +159,10 @@ text {
 .box.four .contents {
   font-size: 36px;
   margin: 50px;
+}
+
+.box.four table {
+  font-size: 24px;
 }
 
 .line.five {

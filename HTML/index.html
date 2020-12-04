@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  <div class="disclaimer">The predictions within are for entertainment purposes only. None should be taken as
+    recommendations.</div>
   <div class="map">
 
     <div class="line one"></div>
@@ -23,7 +25,7 @@
           <br />
           Predicting Stock-Market Prices
         </h1>
-        <dh3 class="sub-title">Using LSTM to predict stock prices.</dh3>
+        <dh3 class="sub-title">Using machine learning to predict stock prices.</dh3>
       </div>
     </div>
 
@@ -126,6 +128,86 @@
             </tr>
           </tbody>
         </table>
+        <h2>Using the above parameters and adding indicators</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>MA50</th>
+              <th>MA200</th>
+              <th>RSI</th>
+              <th>Early Stop</th>
+              <th>MAE</th>
+              <th>Accuracy Score</th>
+              <th>Predicted Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>X</td>
+              <td></td>
+              <td></td>
+              <td>55</td>
+              <td>46.02</td>
+              <td>0.454</td>
+              <td>$331.53</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>X</td>
+              <td></td>
+              <td>67</td>
+              <td>49.35</td>
+              <td>0.382</td>
+              <td>$332.19</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>X</td>
+              <td>55</td>
+              <td>45.15</td>
+              <td>0.437</td>
+              <td>$340.70</td>
+            </tr>
+            <tr>
+              <td>X</td>
+              <td>X</td>
+              <td></td>
+              <td>65</td>
+              <td>50.81</td>
+              <td>0.387</td>
+              <td>$323.37</td>
+            </tr>
+            <tr>
+              <td>X</td>
+              <td></td>
+              <td>X</td>
+              <td>64</td>
+              <td>43.93</td>
+              <td>0.404</td>
+              <td>$343.53</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>X</td>
+              <td>X</td>
+              <td>77</td>
+              <td>49.36</td>
+              <td>0.391</td>
+              <td>$328.05</td>
+            </tr>
+            <tr>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>61</td>
+              <td>55.73</td>
+              <td>0.389</td>
+              <td>$300.06</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>Note that this does not use indicators as intended.</div>
       </div>
     </div>
 
@@ -193,6 +275,10 @@
           <li>Run predictions with Facebook Prophet.
             https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1</li>
           <li>Add scores for indicators.</li>
+
+          <li>Add overview of LSTM how different from RNN.</li>
+          <li>describe indicators</li>
+          <li>Remove random train-test split charts</li>
         </ul>
       </div>
     </div>
