@@ -194,10 +194,14 @@ const getChart = () => {
   const getParameters = () => {
     const params = {
       ticker: $('#ticker-symbol')[0].value,
-      ma50: $('#moving-average-50')[0].checked,
-      ma200: $('#moving-average-50')[0].checked,
-      RSI: $('#RSI')[0].checked,
-      percR: $('#percent-R')[0].checked,
+    };
+    const inputs = $('.box.five .checkbox-group');
+
+    for (let i = 0, l = inputs.length; i < l; i += 1) {
+      const node = inputs[i].firstElementChild;
+      if (node.checked) {
+        params[node.id] = true;
+      }
     }
 
     return params;
@@ -212,6 +216,14 @@ const getChart = () => {
   });
 } // end getChart
 
+const toggleIndicators = className => {
+  const els = $(`.box.five .${className} input`);
+
+  for (let i = 0, l = els.length; i < l; i += 1) {
+    els[i].disabled = !els[i].disabled;
+  }
+}
+
 const checkKey = e => {
   const err = e || window.event;
   const getBox = () => {
@@ -225,5 +237,7 @@ const checkKey = e => {
   }
 }
 
+toggleIndicators('not-implemented');
+toggleIndicators('data-frame');
 document.onkeyup = checkKey;
 

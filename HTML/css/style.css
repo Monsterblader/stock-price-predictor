@@ -23,8 +23,9 @@ text {
 }
 
 .box {
-  background-color: #fff;
+  background-color: #111;
   border-radius: 10px;
+  color: #eee;
   height: 108px;
   opacity: 90%;
   overflow: hidden;
@@ -36,6 +37,7 @@ text {
   background-color: #eee;
   border: 1px solid #111;
   border-radius: 10px;
+  color: #111;
   display: table;
   font-size: 24px;
   height: 108px;
@@ -76,6 +78,7 @@ text {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #111;
   left: 236px;
   text-align: center;
   top: 161px;
@@ -117,16 +120,16 @@ text {
 }
 
 .box.two td {
-  margin: 25px;
-}
-
-.box.two tr {
-  height: 400px;
-}
-
-.box.two td {
+  border: 1px solid black;
   margin: auto;
-  width: 500px;
+  max-height: 400px;
+  max-width: 700px;
+  vertical-align: middle;
+}
+
+.box.two img {
+  max-height: 350px;
+  max-width: 650px;
 }
 
 .line.three {
@@ -138,6 +141,10 @@ text {
 .box.three {
   left: 642px;
   top: 542px;
+}
+
+.box.three .contents {
+  padding: 50px;
 }
 
 .box.three figure {
@@ -172,6 +179,8 @@ text {
 }
 
 .box.five {
+  background-color: white;
+  color: #111;
   left: 1114px;
   top: 117px;
 }
@@ -198,7 +207,7 @@ text {
   border-radius: 10px;
   margin: 10px;
   padding: 15px;
-  width: 240px;
+  width: 350px;
 }
 
 .box.five .border {
@@ -249,8 +258,21 @@ text {
 }
 
 .box.seven {
+  background-image: url(https://static.vecteezy.com/system/resources/previews/000/570/746/original/abstract-financial-chart-with-uptrend-line-graph-and-numbers-in-stock-market-on-gradient-white-color-background-vector.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   left: 1403px;
   top: 628px;
+}
+
+.box.seven .filter {
+  background-color: #eee;
+  height: 100vh;
+  opacity: 65%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 .box.seven .contents {

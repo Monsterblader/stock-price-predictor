@@ -37,7 +37,7 @@
           <tbody>
             <tr>
               <td>
-                <img class="yahoo" src="https://s.yimg.com/rz/p/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
+                <img class="yahoo" src="images/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
               </td>
               <td>
                 <img class="LSTM" src="https://upload.wikimedia.org/wikipedia/commons/5/56/LSTM_cell.svg" />
@@ -66,19 +66,9 @@
           <figcaption>10: Accuracy Score: 0.447</figcaption>
         </figure>
         <figure>
-          <h2>TLSA - 400 Epochs with Random Train-Test Split</h2>
-          <img src="images/TSLA.400.random.201203.svg" />
-          <figcaption>10: Accuracy Score: 0.68</figcaption>
-        </figure>
-        <figure>
           <h2>GE - Early Stop at 148 Epochs with Sequential Train-Test Split</h2>
           <img src="images/GE.400.sequential.201203.svg" />
           <figcaption>10: Accuracy Score: 0.53</figcaption>
-        </figure>
-        <figure>
-          <h2>GE - Early Stop at 96 Epochs with Random Train-Test Split</h2>
-          <img src="images/GE.400.random.201203.svg" />
-          <figcaption>10: Accuracy Score: 0.517</figcaption>
         </figure>
       </div>
     </div>
@@ -230,12 +220,148 @@
                 <label for="moving-average-200">200-day moving average</label>
               </div>
               <div class="checkbox-group">
+                <input id="SMM" class="checkbox" type="checkbox" />
+                <label for="SMM">Simple moving median</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="SSMA" class="checkbox" type="checkbox" />
+                <label for="SSMA">Smoothed simple moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="EMA" class="checkbox" type="checkbox" />
+                <label for="EMA">Exponential weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="DEMA" class="checkbox" type="checkbox" />
+                <label for="DEMA">Double exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="TEMA" class="checkbox" type="checkbox" />
+                <label for="TEMA">Triple exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="TRIMA" class="checkbox" type="checkbox" />
+                <label for="TRIMA">Triangular moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="TRIX" class="checkbox" type="checkbox" />
+                <label for="TRIX">d/dx triple exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="LWMA" class="checkbox" type="checkbox" />
+                <label for="LWMA">Linear weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VAMA" class="checkbox" type="checkbox" />
+                <label for="VAMA">Volume adjusted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VIDYA" class="checkbox" type="checkbox" />
+                <label for="VIDYA">Variable index dynamic average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ER" class="checkbox" type="checkbox" />
+                <label for="ER">Kaufman Efficiency</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="KAMA" class="checkbox" type="checkbox" />
+                <label for="KAMA">Kaufman's adaptive moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ZLEMA" class="checkbox" type="checkbox" />
+                <label for="ZLEMA">Zero-lag exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="WMA" class="checkbox" type="checkbox" />
+                <label for="WMA">Weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="HMA" class="checkbox" type="checkbox" />
+                <label for="HMA">Hull moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="EVWMA" class="checkbox" type="checkbox" />
+                <label for="EVWMA">elastic volume weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VWAP" class="checkbox" type="checkbox" />
+                <label for="VWAP">Volume weighted average price</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="SMMA" class="checkbox" type="checkbox" />
+                <label for="SMMA">Smoothed moving average</label>
+              </div>
+              <div class="checkbox-group not-implemented">
+                <input id="ALMA" class="checkbox" type="checkbox" />
+                <label for="ALMA">Arnaud Legoux moving average</label>
+              </div>
+              <div class="checkbox-group not-implemented">
+                <input id="MAMA" class="checkbox" type="checkbox" />
+                <label for="MAMA">MESA adaptive moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="FRAMA" class="checkbox" type="checkbox" />
+                <label for="FRAMA">Fractal adaptive moving average</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="MACD" class="checkbox" type="checkbox" />
+                <label for="MACD">Moving average convergence-divergence</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="PPO" class="checkbox" type="checkbox" />
+                <label for="PPO">Percent price oscillator</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="VW_MACD" class="checkbox" type="checkbox" />
+                <label for="VW_MACD">Volume-weighted MACD</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="EV_MACD" class="checkbox" type="checkbox" />
+                <label for="EV_MACD">Elastic volume weighted MACD</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="MOM" class="checkbox" type="checkbox" />
+                <label for="MOM">Market momentum</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ROC" class="checkbox" type="checkbox" />
+                <label for="ROC">Rate-of-change indicator</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VBM" class="checkbox" type="checkbox" />
+                <label for="VBM">Volatility-based-momentum indicator</label>
+              </div>
+              <div class="checkbox-group">
                 <input id="RSI" class="checkbox" type="checkbox" />
                 <label for="RSI">Relative-strength index</label>
               </div>
               <div class="checkbox-group">
-                <input id="percent-R" class="checkbox" type="checkbox" />
-                <label for="percent-R">Williams' %R</label>
+                <input id="IFT_RSI" class="checkbox" type="checkbox" />
+                <label for="IFT_RSI">Inverse Fisher Transform of RSI</label>
+              </div>
+              <div class="checkbox-group not-implemented">
+                <input id="SWI" class="checkbox" type="checkbox" />
+                <label for="SWI">Sine-wave indicator</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="DYMI" class="checkbox" type="checkbox" />
+                <label for="DYMI">Dynamic momentum index</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="TR" class="checkbox" type="checkbox" />
+                <label for="TR">True range</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ATR" class="checkbox" type="checkbox" />
+                <label for="ATR">Average true range</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="SAR" class="checkbox" type="checkbox" />
+                <label for="SAR">Stop and reverse</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="PSAR" class="checkbox" type="checkbox" />
+                <label for="PSAR">Parabolic SAR</label>
               </div>
             </div>
           </div>
@@ -260,25 +386,27 @@
     <div class="line seven"></div>
     <div class="box seven" onclick="resizeViews.expand('seven')">
       <div class="cover"><span class="cover-text">What's Next?</span></div>
+      <div class="filter"></div>
       <div class="contents">
         <ul>
           <li>Hyper-tune LSTM</li>
           <li>Add technical indicators to model.</li>
           <li>Fix x-axis labels</li>
           <li>Add options profit predictions</li>
-          <li>Add web-socket</li>
           <li>Get all predictions from last closing date to predicted date and add to chart</li>
-          <li>Further explore random train-test split.</li>
-          <li>As indicators are derivatives, train model on them instead of stock prices.</li>
           <li>Add table with model tuning scores - N_STEPS</li>
           <li>Add backgrounds and format layout.</li>
-          <li>Run predictions with Facebook Prophet.
-            https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1</li>
           <li>Add scores for indicators.</li>
-
           <li>Add overview of LSTM how different from RNN.</li>
           <li>describe indicators</li>
-          <li>Remove random train-test split charts</li>
+          <li>Change workflow to tools used?</li>
+
+          <li>Add ticker symbol lookup</li>
+          <li>Add web-socket</li>
+          <li>As indicators are derivatives, train model on them instead of stock prices.</li>
+          <li>Further explore random train-test split.</li>
+          <li><a href="https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1">Run
+              predictions with Facebook Prophet.</a></li>
         </ul>
       </div>
     </div>
