@@ -43,8 +43,7 @@ def send_media(path):
 
 @app.route('/getprediction')
 def get_pred():
-    result = get_prediction(request.args.to_dict())
-    return json.dumps(result)
+    return get_prediction(request.args.to_dict())
 
 
 # This just gets flask running
