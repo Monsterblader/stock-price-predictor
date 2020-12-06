@@ -294,13 +294,6 @@ def get_prediction(args):
     model_path = os.path.join("results", model_name) + ".h5"
     model.load_weights(model_path)
 
-    # evaluate the model
-    mse, mae = model.evaluate(data["X_test"], data["y_test"], verbose=0)
-    # calculate the mean absolute error (inverse scaling)
-    mean_absolute_error = data["column_scaler"]["adjclose"].inverse_transform([[mae]])[
-        0][0]
-    print("Mean Absolute Error:", mean_absolute_error)
-
     def predict(model, data):
         # retrieve the last sequence from data
         last_sequence = data["last_sequence"][-N_STEPS:]
@@ -318,26 +311,6 @@ def get_prediction(args):
             0][0]
         return predicted_price
 
-    # predict the future price
-    future_price = predict(model, data)
-    print(f"The price in {LOOKUP_STEP} days will be ${future_price:.2f}.")
-
-    def plot_graph(model, data):
-        y_test = data["y_test"]
-        X_test = data["X_test"]
-        y_pred = model.predict(X_test)
-        y_test = np.squeeze(data["column_scaler"]["adjclose"].inverse_transform(
-            np.expand_dims(y_test, axis=0)))
-        y_pred = np.squeeze(data["column_scaler"]
-                            ["adjclose"].inverse_transform(y_pred))
-        # last 200 days, feel free to edit that
-        plt.plot(y_test[-200:], c='b')
-        plt.plot(y_pred[-200:], c='r')
-        plt.xlabel("Days")
-        plt.ylabel("Price")
-        plt.legend(["Actual Price", "Predicted Price"])
-        plt.show()
-
     def get_accuracy(model, data):
         y_test = data["y_test"]
         X_test = data["X_test"]
@@ -346,25 +319,26 @@ def get_prediction(args):
             np.expand_dims(y_test, axis=0)))
         y_pred = np.squeeze(data["column_scaler"]
                             ["adjclose"].inverse_transform(y_pred))
-        print(y_test)
         y_pred = list(map(lambda current, future: int(float(future) > float(
             current)), y_test[:-LOOKUP_STEP], y_pred[LOOKUP_STEP:]))
         y_test = list(map(lambda current, future: int(float(future) > float(
             current)), y_test[:-LOOKUP_STEP], y_test[LOOKUP_STEP:]))
         return accuracy_score(y_test, y_pred)
 
-    print(str(LOOKUP_STEP) + ":", "Accuracy Score:", get_accuracy(model, data))
+    mse, mae = model.evaluate(data["X_test"], data["y_test"], verbose=0)
 
     y_test = data["y_test"]
     X_test = data["X_test"]
     y_pred = model.predict(X_test)
-    y_test = np.squeeze(data["column_scaler"]["adjclose"].inverse_transform(
-        np.expand_dims(y_test, axis=0)))
-    y_pred = np.squeeze(data["column_scaler"]
-                        ["adjclose"].inverse_transform(y_pred))
+
     df = pd.DataFrame()
-    df['test'] = y_test
-    df['pred'] = y_pred
-    # test_df = pd.DataFrame(y_test)
-    # pred_df = pd.DataFrame(y_pred)
+    df['test'] = np.squeeze(data["column_scaler"]["adjclose"].inverse_transform(
+        np.expand_dims(y_test, axis=0)))
+    df['pred'] = np.squeeze(data["column_scaler"]
+                            ["adjclose"].inverse_transform(y_pred))
+    df['accuracy'] = get_accuracy(model, data)
+    df['future_price'] = predict(model, data)
+    df['mean_absolute_error'] = data["column_scaler"]["adjclose"].inverse_transform([[mae]])[
+        0][0]
+
     return df.to_json()

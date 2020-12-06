@@ -112,11 +112,16 @@ const resizeViews = {
 
 const getChart = () => {
   const cb = data => {
-    const result = JSON.parse(JSON.parse(data).df);
-    const test = Object.values(result.test);
-    const pred = Object.values(result.pred);
-    const chart1 = [];
-    const chart2 = [];
+    const dollars = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2
+    });
+    const result = JSON.parse(data),
+      test = Object.values(result.test),
+      pred = Object.values(result.pred),
+      chart1 = [],
+      chart2 = [];
 
     for (let i = 0, l = test.length; i < l; i += 1) {
       chart1[i] = { index: i, val: test[i] };
@@ -196,6 +201,11 @@ const getChart = () => {
       }
     }
 
+    $('.box.five .metrics')[0].style.visibility = 'initial';
+    $('.box.five .metrics .days')[0].innerText = 10;
+    $('.box.five .metrics .mae')[0].innerText = result.mean_absolute_error['0'].toFixed(3);
+    $('.box.five .metrics .accuracy')[0].innerText = result.accuracy['0'].toFixed(3);
+    $('.box.five .metrics .price')[0].innerText = dollars.format(result.future_price['0']);
     $('#get-prediction')[0].innerText = 'Go!';
   } // end cb
 

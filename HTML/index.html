@@ -368,8 +368,32 @@
 
           <div id="get-prediction" class="btn" onclick="getChart()">Go!</div>
         </div>
-        <div class="chart">
-          <div id="my_dataviz"></div>
+        <div class="output">
+          <div class="chart">
+            <div id="my_dataviz"></div>
+          </div>
+          <div class="metrics">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Days</td>
+                  <td class="days"></td>
+                </tr>
+                <tr>
+                  <td>Mean absolute error</td>
+                  <td class="mae"></td>
+                </tr>
+                <tr>
+                  <td>Accuracy</td>
+                  <td class="accuracy"></td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td class="price"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

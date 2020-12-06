@@ -224,10 +224,27 @@ text {
   cursor: pointer;
 }
 
+.box.five .output {
+  display: inline-block;
+}
+
 .box.five .chart {
   display: inline-block;
   height: 100vh;
   padding: 50px;
+}
+
+.box.five .metrics {
+  display: inline-block;
+  padding: 50px;
+  vertical-align: top;
+  visibility: hidden;
+}
+
+.box.five .metrics td {
+  border: 1px solid #111;
+  border-collapse: collapse;
+  padding: 5px;
 }
 
 .box.five .line {
