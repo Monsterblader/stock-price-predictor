@@ -23,9 +23,8 @@ text {
 }
 
 .box {
-  background-color: #111;
+  background-color: white;
   border-radius: 10px;
-  color: #eee;
   height: 108px;
   opacity: 90%;
   overflow: hidden;
@@ -168,6 +167,8 @@ text {
   margin: 50px;
 }
 
+.
+
 .box.four table {
   font-size: 24px;
 }
@@ -228,23 +229,41 @@ text {
   display: inline-block;
 }
 
-.box.five .chart {
+.box.five .company-name {
+  background-color: lightgray;
+  border-radius: 20px;
   display: inline-block;
-  height: 100vh;
+  margin-bottom: 25px;
+  margin-left: 50%;
+  margin-top: 25px;
   padding: 50px;
+  text-align: center;
+  transform: translate(-50%, 0%);
+  visibility: hidden;
 }
 
 .box.five .metrics {
-  display: inline-block;
-  padding: 50px;
   vertical-align: top;
   visibility: hidden;
 }
 
+.box.five table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.box.five th {
+  padding: 5px;
+}
+
 .box.five .metrics td {
   border: 1px solid #111;
-  border-collapse: collapse;
   padding: 5px;
+  text-align: right;
+}
+
+.box.five .chart {
+  padding: 50px;
 }
 
 .box.five .line {
@@ -259,17 +278,6 @@ text {
 
 .box.five .tick text {
   font-size: 16px;
-}
-
-.line.six {
-  height: 252px;
-  left: 1072px;
-  top: 565px;
-}
-
-.box.six {
-  left: 976px;
-  top: 457px;
 }
 
 .line.seven {

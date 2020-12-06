@@ -369,41 +369,31 @@
           <div id="get-prediction" class="btn" onclick="getChart()">Go!</div>
         </div>
         <div class="output">
-          <div class="chart">
-            <div id="my_dataviz"></div>
+          <div class="company-name-container">
+            <h1 class="company-name"></h1>
           </div>
           <div class="metrics">
             <table>
+              <thead>
+                <tr>
+                  <th>Days</th>
+                  <th>Mean absolute error</th>
+                  <th>Accuracy</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
               <tbody>
                 <tr>
-                  <td>Days</td>
                   <td class="days"></td>
-                </tr>
-                <tr>
-                  <td>Mean absolute error</td>
                   <td class="mae"></td>
-                </tr>
-                <tr>
-                  <td>Accuracy</td>
                   <td class="accuracy"></td>
-                </tr>
-                <tr>
-                  <td>Price</td>
                   <td class="price"></td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <div id="my_dataviz" class="chart"></div>
         </div>
-      </div>
-    </div>
-
-    <div class="line six"></div>
-    <div class="box six" onclick="resizeViews.expand('six')">
-      <div class="cover"><span class="cover-text">What Are Options?</span></div>
-      <div class="contents">
-        <div>Call option - Personal Seat License</div>
-        <div>Put option - insurance</div>
       </div>
     </div>
 
@@ -414,7 +404,6 @@
       <div class="contents">
         <ul>
           <li>Hyper-tune LSTM</li>
-          <li>Add options profit predictions</li>
           <li>Get all predictions from last closing date to predicted date and add to chart</li>
           <li>Add table with model tuning scores - N_STEPS</li>
           <li>Add backgrounds and format layout.</li>
@@ -422,7 +411,8 @@
           <li>Add overview of LSTM how different from RNN.</li>
           <li>describe indicators</li>
           <li>Change workflow to tools used?</li>
-
+          <br />
+          <li>Add options profit predictions</li>
           <li>Add remainder of technical indicators to model.</li>
           <li>Add ticker symbol lookup</li>
           <li>Add web-socket</li>

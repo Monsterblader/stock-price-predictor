@@ -8,6 +8,7 @@ from sklearn.metrics import accuracy_score
 from yahoo_fin import stock_info as si
 from collections import deque
 from finta import TA
+import yfinance as yf
 
 import numpy as np
 import pandas as pd
@@ -331,6 +332,9 @@ def get_prediction(args):
     X_test = data["X_test"]
     y_pred = model.predict(X_test)
 
+    company = yf.Ticker(ticker)
+    company_name = company.info['longName']
+
     df = pd.DataFrame()
     df['test'] = np.squeeze(data["column_scaler"]["adjclose"].inverse_transform(
         np.expand_dims(y_test, axis=0)))
@@ -340,5 +344,6 @@ def get_prediction(args):
     df['future_price'] = predict(model, data)
     df['mean_absolute_error'] = data["column_scaler"]["adjclose"].inverse_transform([[mae]])[
         0][0]
+    df['company'] = company_name
 
     return df.to_json()

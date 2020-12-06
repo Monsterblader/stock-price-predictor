@@ -130,8 +130,8 @@ const getChart = () => {
     d3.select('#my_dataviz')._groups[0][0].innerHTML = "";
 
     //No.1 define the svg
-    const graphWidth = 600,
-      graphHeight = 450,
+    const graphWidth = 1000,
+      graphHeight = 600,
       margin = {
         top: 30,
         right: 10,
@@ -202,6 +202,8 @@ const getChart = () => {
     }
 
     $('.box.five .metrics')[0].style.visibility = 'initial';
+    $('.box.five .company-name')[0].style.visibility = 'initial';
+    $('.box.five .company-name')[0].innerText = result.company['0'];
     $('.box.five .metrics .days')[0].innerText = 10;
     $('.box.five .metrics .mae')[0].innerText = result.mean_absolute_error['0'].toFixed(3);
     $('.box.five .metrics .accuracy')[0].innerText = result.accuracy['0'].toFixed(3);
