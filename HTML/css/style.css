@@ -240,6 +240,10 @@ text {
   fill: none;
 }
 
+.box.five .tick text {
+  font-size: 16px;
+}
+
 .line.six {
   height: 252px;
   left: 1072px;

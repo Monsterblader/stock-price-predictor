@@ -188,6 +188,14 @@ const getChart = () => {
       .attr("class", "line2") // Assign a class for styling
       .attr("d", line); // 11. Calls the line generator
 
+    const tix = $('#my_dataviz .x.axis .tick');
+
+    for (let i = 0, l = tix.length; i < l; i += 1) {
+      if (i % 100 !== 0) {
+        tix[i].innerHTML = '';
+      }
+    }
+
     $('#get-prediction')[0].innerText = 'Go!';
   } // end cb
 
