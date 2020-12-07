@@ -149,8 +149,14 @@ th, td {
 }
 
 .box.two .logo {
+  margin: auto;
   max-height: 200px;
   max-width: 200px;
+}
+
+.box.two .finta {
+  font-size: 48px;
+  text-align: center
 }
 
 .line.three {
@@ -209,25 +215,34 @@ th, td {
   margin: 50px;
 }
 
-.box.four table {
-  border-collapse: collapse;
-  margin: 50px 100px;
+.box.four .no-border {
+  vertical-align: middle;
+  width: 500px;
 }
 
-.box.four th, .box.four td {
+.box.four .no-border div {
+  text-align: left;
+}
+
+.box.four .nested-table {
+  border-collapse: collapse;
+  margin: 15px 0px;
+}
+
+.box.four .nested-table th, .box.four .nested-table td {
   padding: 5px;
-  font-size: 24px;
+  font-size: 20px;
   text-align: right;
 }
 
-.box.four td {
+.box.four .nested-table td {
   background-color: white;
   border: 1px solid #111;
   opacity: 100%;
 }
 
-.box.four .selected {
-  text-align: center;
+.box.four td.chosen {
+  background-color: yellow;
 }
 
 .line.five {
@@ -357,7 +372,7 @@ th, td {
   margin: 50px 100px;
 }
 
-.box.six th, .box.four td {
+.box.six th, .box.six td {
   padding: 5px;
   font-size: 24px;
   text-align: right;
@@ -372,7 +387,6 @@ th, td {
 .box.six .selected {
   text-align: center;
 }
-
 
 .line.seven {
   height: 190px;
