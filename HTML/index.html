@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/d3rotate.css" />
 </head>
 
 <body>
@@ -32,25 +32,34 @@
 
     <div class="line two"></div>
     <div class="box two" onclick="resizeViews.expand('two')">
-      <div class="cover"><span class="cover-text">Workflow</span></div>
-      <div id="planetarium"></div>
-      <div class="contents" style="display: none;">
+      <div class="cover"><span class="cover-text">The Tools</span></div>
+      <div class="filter"></div>
+      <div class="contents">
         <table>
           <tbody>
             <tr>
               <td>
-                <img class="yahoo" src="images/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
+                <img class="logo yahoo" src="images/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
               </td>
               <td>
-                <img class="LSTM" src="https://upload.wikimedia.org/wikipedia/commons/5/56/LSTM_cell.svg" />
+                <img class="logo python"
+                  src="https://logos-download.com/wp-content/uploads/2016/10/Python_logo_wordmark.png" />
+              </td>
+              <td>
+                <img class="logo tensorflow"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/2560px-TensorFlowLogo.svg.png" />
               </td>
             </tr>
             <tr>
               <td>
-                <img class="indicators" src="https://miro.medium.com/max/4800/1*UPNJytGH9cFb4anA1b_KVQ.jpeg" />
+                <img class="logo indicators"
+                  src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" />
               </td>
               <td>
-                <img class="chart" src="images/TSLA-shift-10.svg" />
+                <div class="finta">FinTA</div>
+              </td>
+              <td>
+                <div>FinTA</div>
               </td>
             </tr>
           </tbody>
@@ -60,7 +69,8 @@
 
     <div class="line three"></div>
     <div class="box three" onclick="resizeViews.expand('three')">
-      <div class="cover"><span class="cover-text">Initial Results</span></div>
+      <div class="cover"><span class="cover-text">The Baseline</span></div>
+      <div class="filter"></div>
       <div class="contents">
         <figure>
           <h2>Tesla, Inc. - TSLA</h2>
@@ -98,146 +108,160 @@
             <tbody>
               <tr>
                 <td>1.00</td>
-                <td>0..502</td>
+                <td>0.502</td>
                 <td>$9.81</td>
               </tr>
             </tbody>
           </table>
         </figure>
+        <ul>
+          <li>Model does not respond well to change in stock's character.</li>
+        </ul>
       </div>
     </div>
 
     <div class="line four"></div>
     <div class="box four" onclick="resizeViews.expand('four')">
-      <div class="cover"><span class="cover-text">Takeaways</span></div>
+      <div class="cover"><span class="cover-text">The Parameters</span></div>
+      <div class="filter"></div>
       <div class="contents">
-        <div>What impact do indicators have on prediction?</div>
-        <ul>
-          <li>Model does not respond well to change in stock's character.</li>
-          <li>Adding indicators seems to reduce accuracy. They are derivative.</li>
-        </ul>
+        <div>Tuning the model.</div>
         <table>
           <thead>
             <tr>
-              <th>N_STEPS</th>
-              <th>Early Stop</th>
-              <th>Accuracy Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>70</td>
-              <td>62</td>
-              <td>0.4</td>
-            </tr>
-            <tr>
-              <td>35</td>
-              <td>51</td>
-              <td>0.436</td>
-            </tr>
-            <tr>
-              <td>30</td>
-              <td>58</td>
-              <td>0.437</td>
-            </tr>
-            <tr>
-              <td>25</td>
-              <td>61</td>
-              <td>0.424</td>
-            </tr>
-            <tr>
-              <td>20</td>
-              <td>58</td>
-              <td>0.424</td>
-            </tr>
-          </tbody>
-        </table>
-        <div>Add indicators to the model.</div>
-        <table>
-          <thead>
-            <tr>
-              <th>MA50</th>
-              <th>MA200</th>
-              <th>RSI</th>
-              <th>Early Stop</th>
-              <th>MAE</th>
+              <th>Training Window Size</th>
+              <th>Mean Absolute Error</th>
               <th>Accuracy Score</th>
               <th>Predicted Price</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="selected">X</td>
-              <td></td>
-              <td></td>
-              <td>55</td>
-              <td>46.02</td>
-              <td>0.454</td>
-              <td>$331.53</td>
+              <td>70</td>
+              <td>27.46</td>
+              <td>0.448</td>
+              <td>$384.30</td>
             </tr>
             <tr>
-              <td></td>
-              <td class="selected">X</td>
-              <td></td>
-              <td>67</td>
-              <td>49.35</td>
-              <td>0.382</td>
-              <td>$332.19</td>
+              <td>40</td>
+              <td>23.83</td>
+              <td>0.456</td>
+              <td>$413.43</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td class="selected">X</td>
-              <td>55</td>
-              <td>45.15</td>
-              <td>0.437</td>
-              <td>$340.70</td>
+              <td>35</td>
+              <td>19.95</td>
+              <td>0.467</td>
+              <td>$429.03</td>
             </tr>
             <tr>
-              <td class="selected">X</td>
-              <td class="selected">X</td>
-              <td></td>
-              <td>65</td>
-              <td>50.81</td>
-              <td>0.387</td>
-              <td>$323.37</td>
+              <td>30</td>
+              <td>22.87</td>
+              <td>0.460</td>
+              <td>$427.37</td>
             </tr>
             <tr>
-              <td class="selected">X</td>
-              <td></td>
-              <td class="selected">X</td>
-              <td>64</td>
-              <td>43.93</td>
-              <td>0.404</td>
-              <td>$343.53</td>
+              <td>25</td>
+              <td>20.51</td>
+              <td>0.451</td>
+              <td>$441.23</td>
             </tr>
             <tr>
-              <td></td>
-              <td class="selected">X</td>
-              <td class="selected">X</td>
-              <td>77</td>
-              <td>49.36</td>
-              <td>0.391</td>
-              <td>$328.05</td>
+              <td>20</td>
+              <td>16.40</td>
+              <td>0.478</td>
+              <td>$473.08</td>
             </tr>
             <tr>
-              <td class="selected">X</td>
-              <td class="selected">X</td>
-              <td class="selected">X</td>
-              <td>61</td>
-              <td>55.73</td>
-              <td>0.389</td>
-              <td>$300.06</td>
+              <td>15</td>
+              <td>16.61</td>
+              <td>0.482</td>
+              <td>$476.45</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>20.05</td>
+              <td>0.449</td>
+              <td>$457.88</td>
             </tr>
           </tbody>
         </table>
-        <div>Note that this does not use indicators as intended.</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Mean Absolute Error</th>
+              <th>Accuracy</th>
+              <th>Predicted Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>28.28</td>
+              <td>0.465</td>
+              <td>$372.12</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>N_LAYERS</th>
+              <th>Early Stop</th>
+              <th>Mean Absolute Error</th>
+              <th>Accuracy</th>
+              <th>Predicted Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4</td>
+              <td>80</td>
+              <td>24.29</td>
+              <td>0.461</td>
+              <td>$436.74</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>71</td>
+              <td>51.85</td>
+              <td>0.385</td>
+              <td>$309.64</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>DROPOUT</th>
+              <th>Early Stop</th>
+              <th>Mean Absolute Error</th>
+              <th>Accuracy</th>
+              <th>Predicted Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0.5</td>
+              <td>51</td>
+              <td>53.78</td>
+              <td>0.389</td>
+              <td>$317.31</td>
+            </tr>
+            <tr>
+              <td>0.6</td>
+              <td>54</td>
+              <td>54.60</td>
+              <td>0.389</td>
+              <td>$310.38</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="line five"></div>
     <div class="box five" onclick="resizeViews.expand('five')">
-      <div class="cover"><span class="cover-text">Profit</span></div>
+      <div class="cover"><span class="cover-text">The Predictor</span></div>
       <div class="contents">
         <div class="parameters">
           <input id="ticker-symbol" type="text" placeholder="Enter ticker symbol" />
@@ -431,9 +455,101 @@
       </div>
     </div>
 
+    <div class="line six"></div>
+    <div class="box six" onclick="resizeViews.expand('six')">
+      <div class="cover"><span class="cover-text">The Indicators</span></div>
+      <div class="filter"></div>
+      <div class="contents">
+        <div>Add indicators to the model.</div>
+        <div>What impact do indicators have on prediction?</div>
+        <ul>
+          <li>Adding indicators seems to reduce accuracy. They are derivative.</li>
+        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>MA50</th>
+              <th>MA200</th>
+              <th>RSI</th>
+              <th>Early Stop</th>
+              <th>MAE</th>
+              <th>Accuracy Score</th>
+              <th>Predicted Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="selected">X</td>
+              <td></td>
+              <td></td>
+              <td>55</td>
+              <td>46.02</td>
+              <td>0.454</td>
+              <td>$331.53</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="selected">X</td>
+              <td></td>
+              <td>67</td>
+              <td>49.35</td>
+              <td>0.382</td>
+              <td>$332.19</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="selected">X</td>
+              <td>55</td>
+              <td>45.15</td>
+              <td>0.437</td>
+              <td>$340.70</td>
+            </tr>
+            <tr>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td></td>
+              <td>65</td>
+              <td>50.81</td>
+              <td>0.387</td>
+              <td>$323.37</td>
+            </tr>
+            <tr>
+              <td class="selected">X</td>
+              <td></td>
+              <td class="selected">X</td>
+              <td>64</td>
+              <td>43.93</td>
+              <td>0.404</td>
+              <td>$343.53</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td>77</td>
+              <td>49.36</td>
+              <td>0.391</td>
+              <td>$328.05</td>
+            </tr>
+            <tr>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td>61</td>
+              <td>55.73</td>
+              <td>0.389</td>
+              <td>$300.06</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>Note that this does not use indicators as intended.</div>
+      </div>
+    </div>
+
     <div class="line seven"></div>
     <div class="box seven" onclick="resizeViews.expand('seven')">
-      <div class="cover"><span class="cover-text">What's Next?</span></div>
+      <div class="cover"><span class="cover-text">The Future</span></div>
       <div class="filter"></div>
       <div class="contents">
         <ul>
@@ -466,7 +582,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/getPrediction.js"></script>
-  <script src="js/d3rotate.js"></script>
 </body>
 
 </html>
