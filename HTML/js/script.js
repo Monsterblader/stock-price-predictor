@@ -110,5 +110,18 @@ const resizeViews = {
   },
 }
 
+const checkKey = e => {
+  const err = e || window.event;
+  const getBox = () => {
+    let className = '';
+
+    return d3.select('.active')._groups[0][0].classList[1];
+  }
+
+  if (e.keyCode == '27') {
+    resizeViews.restore(getBox());
+  }
+}
+
 document.onkeyup = checkKey;
 

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/d3rotate.css" />
 </head>
 
 <body>
@@ -32,7 +33,8 @@
     <div class="line two"></div>
     <div class="box two" onclick="resizeViews.expand('two')">
       <div class="cover"><span class="cover-text">Workflow</span></div>
-      <div class="contents">
+      <div id="planetarium"></div>
+      <div class="contents" style="display: none;">
         <table>
           <tbody>
             <tr>
@@ -61,14 +63,46 @@
       <div class="cover"><span class="cover-text">Initial Results</span></div>
       <div class="contents">
         <figure>
-          <h2>TSLA - Early Stop at 63 Epochs with Sequential Train-Test Split</h2>
-          <img src="images/TSLA.400.sequential.201203.svg" />
-          <figcaption>10: Accuracy Score: 0.447</figcaption>
+          <h2>Tesla, Inc. - TSLA</h2>
+          <img src="images/TSLA.201206.30.svg" />
+          <figcaption></figcaption>
+          <table>
+            <thead>
+              <tr>
+                <th>MAE</th>
+                <th>Accuracy Score</th>
+                <th>Predicted Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>56.27</td>
+                <td>0.388</td>
+                <td>$332.07</td>
+              </tr>
+            </tbody>
+          </table>
         </figure>
         <figure>
-          <h2>GE - Early Stop at 148 Epochs with Sequential Train-Test Split</h2>
-          <img src="images/GE.400.sequential.201203.svg" />
-          <figcaption>10: Accuracy Score: 0.53</figcaption>
+          <h2>General Electric Company - GE</h2>
+          <img src="images/GE.201206.30.svg" />
+          <figcaption></figcaption>
+          <table>
+            <thead>
+              <tr>
+                <th>MAE</th>
+                <th>Accuracy Score</th>
+                <th>Predicted Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1.00</td>
+                <td>0..502</td>
+                <td>$9.81</td>
+              </tr>
+            </tbody>
+          </table>
         </figure>
       </div>
     </div>
@@ -77,10 +111,10 @@
     <div class="box four" onclick="resizeViews.expand('four')">
       <div class="cover"><span class="cover-text">Takeaways</span></div>
       <div class="contents">
-        What impact do indicators have on prediction?
+        <div>What impact do indicators have on prediction?</div>
         <ul>
-          <li>Adding indicators seems to reduce accuracy. They are derivative.</li>
           <li>Model does not respond well to change in stock's character.</li>
+          <li>Adding indicators seems to reduce accuracy. They are derivative.</li>
         </ul>
         <table>
           <thead>
@@ -118,7 +152,7 @@
             </tr>
           </tbody>
         </table>
-        <h2>Using the above parameters and adding indicators</h2>
+        <div>Add indicators to the model.</div>
         <table>
           <thead>
             <tr>
@@ -133,7 +167,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>X</td>
+              <td class="selected">X</td>
               <td></td>
               <td></td>
               <td>55</td>
@@ -143,7 +177,7 @@
             </tr>
             <tr>
               <td></td>
-              <td>X</td>
+              <td class="selected">X</td>
               <td></td>
               <td>67</td>
               <td>49.35</td>
@@ -153,15 +187,15 @@
             <tr>
               <td></td>
               <td></td>
-              <td>X</td>
+              <td class="selected">X</td>
               <td>55</td>
               <td>45.15</td>
               <td>0.437</td>
               <td>$340.70</td>
             </tr>
             <tr>
-              <td>X</td>
-              <td>X</td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
               <td></td>
               <td>65</td>
               <td>50.81</td>
@@ -169,9 +203,9 @@
               <td>$323.37</td>
             </tr>
             <tr>
-              <td>X</td>
+              <td class="selected">X</td>
               <td></td>
-              <td>X</td>
+              <td class="selected">X</td>
               <td>64</td>
               <td>43.93</td>
               <td>0.404</td>
@@ -179,17 +213,17 @@
             </tr>
             <tr>
               <td></td>
-              <td>X</td>
-              <td>X</td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
               <td>77</td>
               <td>49.36</td>
               <td>0.391</td>
               <td>$328.05</td>
             </tr>
             <tr>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
               <td>61</td>
               <td>55.73</td>
               <td>0.389</td>
@@ -431,6 +465,8 @@
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/getPrediction.js"></script>
+  <script src="js/d3rotate.js"></script>
 </body>
 
 </html>
