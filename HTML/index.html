@@ -49,12 +49,6 @@
                 <img class="logo tensorflow"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/2560px-TensorFlowLogo.svg.png" />
               </td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <tbody>
-            <tr>
               <td>
                 <img class="logo indicators"
                   src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" />
@@ -75,42 +69,42 @@
       <div class="contents">
         <figure>
           <h2>Tesla, Inc. - TSLA</h2>
-          <img src="images/TSLA.201206.30.svg" />
+          <img src="images/TSLA.201207.svg" />
           <figcaption></figcaption>
           <table>
             <thead>
               <tr>
-                <th>MAE</th>
+                <th>Mean Absolute Error</th>
                 <th>Accuracy Score</th>
                 <th>Predicted Price</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>56.27</td>
-                <td>0.388</td>
-                <td>$332.07</td>
+                <td>27.46</td>
+                <td>0.448</td>
+                <td>$384.30</td>
               </tr>
             </tbody>
           </table>
         </figure>
         <figure>
           <h2>General Electric Company - GE</h2>
-          <img src="images/GE.201206.30.svg" />
+          <img src="images/GE.201207.svg" />
           <figcaption></figcaption>
           <table>
             <thead>
               <tr>
-                <th>MAE</th>
+                <th>Mean Absolute Error</th>
                 <th>Accuracy Score</th>
                 <th>Predicted Price</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1.00</td>
-                <td>0.502</td>
-                <td>$9.81</td>
+                <td>0.57</td>
+                <td>0.505</td>
+                <td>$10.73</td>
               </tr>
             </tbody>
           </table>
@@ -514,6 +508,15 @@
       <div class="cover"><span class="cover-text">The Indicators</span></div>
       <div class="filter"></div>
       <div class="contents">
+        <div>Indicators - technical traders uses these to determine when to buy or sell a stock</div>
+        <br />
+        <ul>
+          <li>50-day moving average - the average of the closing prices of the past 50 days.</li>
+          <li>200-day moving average - the average of the closing prices of the past 200 days.</li>
+          <li>Relative strength indicator - the position of the most recent closing price relative to the last n closing
+            prices.</li>
+        </ul>
+        <br />
         <div>What impact do indicators have on prediction?</div>
         <table>
           <thead>
@@ -571,17 +574,17 @@
               <td></td>
               <td class="selected">X</td>
               <td class="selected">X</td>
-              <td>49.36</td>
-              <td>0.391</td>
-              <td>$328.05</td>
+              <td>61.41</td>
+              <td>0.450</td>
+              <td>$200.23</td>
             </tr>
             <tr>
               <td class="selected">X</td>
               <td class="selected">X</td>
               <td class="selected">X</td>
-              <td>55.73</td>
-              <td>0.389</td>
-              <td>$300.06</td>
+              <td>55.27</td>
+              <td>0.450</td>
+              <td>$269.62</td>
             </tr>
           </tbody>
         </table>
@@ -596,25 +599,21 @@
     <div class="box seven" onclick="resizeViews.expand('seven')">
       <div class="cover"><span class="cover-text">The Future</span></div>
       <div class="filter"></div>
+      <div class="todo">
+        <img src="https://miro.medium.com/max/4800/0*bP0GbIkuUFhxhzoo" />
+      </div>
       <div class="contents">
-        <ul>
-          <li>Hyper-tune LSTM</li>
-          <li>Get all predictions from last closing date to predicted date and add to chart</li>
-          <li>Add backgrounds and format layout.</li>
-          <li>Add scores for indicators.</li>
-          <li>Add overview of LSTM how different from RNN.</li>
-          <li>describe indicators</li>
-          <li>Change workflow to tools used?</li>
-          <br />
-          <li>Add options profit predictions</li>
-          <li>Add remainder of technical indicators to model.</li>
-          <li>Add ticker symbol lookup</li>
-          <li>Add web-socket</li>
-          <li>As indicators are derivatives, train model on them instead of stock prices.</li>
-          <li>Further explore random train-test split.</li>
-          <li><a href="https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1">Run
-              predictions with Facebook Prophet.</a></li>
-        </ul>
+        <div>Add predictions to chart</div>
+        <div>Add overview of LSTM how different from RNN.</div>
+        <br />
+        <div>Add options profit predictions</div>
+        <div>Add remainder of technical indicators to model.</div>
+        <div>Add ticker symbol lookup</div>
+        <div>Add web-socket</div>
+        <div>As indicators are derivatives, train model on them instead of stock prices.</div>
+        <div>Adjust model to accommodate indicators as they are actually used.</div>
+        <div><a href="https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1">Run
+            predictions with Facebook Prophet.</a></div>
       </div>
     </div>
 

@@ -51,7 +51,7 @@ th, td {
   z-index: 10;
 }
 
-.two, .three, .four, .seven {
+.two, .three, .four, .six, .seven {
   background-image: url(https://static.vecteezy.com/system/resources/previews/000/570/746/original/abstract-financial-chart-with-uptrend-line-graph-and-numbers-in-stock-market-on-gradient-white-color-background-vector.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -135,8 +135,15 @@ th, td {
   top: 353px;
 }
 
+.box.two .contents {
+  height: 100vh;
+}
+
 .box.two table {
-  margin: auto;
+  left: 50%;
+  position: absolute;
+  top: 33%;
+  transform: translate(-50%, -50%);
 }
 
 .box.two td {
@@ -145,6 +152,7 @@ th, td {
   max-height: 400px;
   max-width: 700px;
   opacity: 100%;
+  padding: 35px;
   vertical-align: middle;
 }
 
@@ -216,8 +224,9 @@ th, td {
 }
 
 .box.four .no-border {
+  font-size: 36px;
   vertical-align: middle;
-  width: 500px;
+  width: 600px;
 }
 
 .box.four .no-border div {
@@ -364,6 +373,7 @@ th, td {
 
 .box.six .contents {
   font-size: 36px;
+  line-height: 1.25em;
   margin: 50px;
 }
 
@@ -401,8 +411,23 @@ th, td {
 
 .box.seven .contents {
   font-size: 36px;
-  margin: 50px;
+  left: 50%;
+  line-height: 59px;
+  margin-left: 40px;
+  margin-right: 400px;
+  margin-top: 200px;
+  position: absolute;
+  transform: translate(-50%, 0%);
 }
+
+.box.seven .todo img {
+  left: 50%;
+  max-height: 100vh;
+  position: absolute;
+  transform: translate(-50%, 0%);
+}
+
+
 
 .background-image {
   background-image: url("../images/grid_plot.svg");
