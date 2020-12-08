@@ -27,6 +27,10 @@
           Predicting Stock-Market Prices
         </h1>
         <dh3 class="sub-title">Using machine learning to predict stock prices.</dh3>
+        <div class="credit">by Albert Lee
+          <br />
+          Metis - winter 2020
+        </div>
       </div>
     </div>
 
@@ -42,6 +46,9 @@
                 <img class="logo yahoo" src="images/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
               </td>
               <td>
+                <div class="finta">FinTA</div>
+              </td>
+              <td>
                 <img class="logo python"
                   src="https://logos-download.com/wp-content/uploads/2016/10/Python_logo_wordmark.png" />
               </td>
@@ -52,9 +59,6 @@
               <td>
                 <img class="logo indicators"
                   src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" />
-              </td>
-              <td>
-                <div class="finta">FinTA</div>
               </td>
             </tr>
           </tbody>
@@ -588,10 +592,6 @@
             </tr>
           </tbody>
         </table>
-        <ul>
-          <li>Adding indicators seems to reduce accuracy. They are derivative.</li>
-          <li>Note that this does not use indicators as intended.</li>
-        </ul>
       </div>
     </div>
 
@@ -603,17 +603,16 @@
         <img src="https://miro.medium.com/max/4800/0*bP0GbIkuUFhxhzoo" />
       </div>
       <div class="contents">
+        <div><a href="https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1">Run
+            predictions with Facebook Prophet.</a></div>
+        <div>Add selectable parameters.</div>
         <div>Add predictions to chart</div>
-        <div>Add overview of LSTM how different from RNN.</div>
-        <br />
         <div>Add options profit predictions</div>
         <div>Add remainder of technical indicators to model.</div>
         <div>Add ticker symbol lookup</div>
         <div>Add web-socket</div>
         <div>As indicators are derivatives, train model on them instead of stock prices.</div>
         <div>Adjust model to accommodate indicators as they are actually used.</div>
-        <div><a href="https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1">Run
-            predictions with Facebook Prophet.</a></div>
       </div>
     </div>
 
@@ -623,6 +622,9 @@
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/aapl.ma50.js"></script>
+  <script src="js/uber.js"></script>
+  <script src="js/dis.js"></script>
   <script src="js/script.js"></script>
   <script src="js/getPrediction.js"></script>
 </body>

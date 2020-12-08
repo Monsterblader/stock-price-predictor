@@ -113,15 +113,21 @@ th, td {
   padding: 60px;
 }
 
-.box.one .title{
+.box.one .title {
   font-size: 60px;
   padding-bottom: 40px;
   text-shadow: 2px 2px 8px #ddd;
 }
 
-.box.one .sub-title{
+.box.one .sub-title {
   font-size: 48px;
   text-shadow: 2px 2px 8px #ddd;
+}
+
+.box.one .credit {
+  font-size: 24px;
+  padding-top: 20px;
+  text-align: right;
 }
 
 .line.two {
@@ -205,6 +211,10 @@ th, td {
   border: 1px solid #111;
   opacity: 100%;
   text-align: right;
+}
+
+.box.three ul {
+  padding: 50px;
 }
 
 .line.four {
@@ -375,6 +385,10 @@ th, td {
   font-size: 36px;
   line-height: 1.25em;
   margin: 50px;
+}
+
+.box.six ul {
+  padding: 0px 50px;
 }
 
 .box.six table {
