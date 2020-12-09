@@ -16,6 +16,11 @@ text {
   font-size: 24px;
 }
 
+th, td {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px
+}
+
 .line {
   border: 1px solid grey;
   position: absolute;
@@ -23,18 +28,20 @@ text {
 }
 
 .box {
-  background-color: #fff;
+  background-color: white;
   border-radius: 10px;
   height: 108px;
   opacity: 90%;
   overflow: hidden;
   position: absolute;
-  text-align: center;
   width: 192px;
 }
 
 .cover {
-  background-color: #fff;
+  background-color: #eee;
+  border: 1px solid #111;
+  border-radius: 10px;
+  color: #111;
   display: table;
   font-size: 24px;
   height: 108px;
@@ -44,9 +51,36 @@ text {
   z-index: 10;
 }
 
+.two, .three, .four, .six, .seven {
+  background-image: url(https://static.vecteezy.com/system/resources/previews/000/570/746/original/abstract-financial-chart-with-uptrend-line-graph-and-numbers-in-stock-market-on-gradient-white-color-background-vector.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.filter {
+  background-color: #fff;
+  height: 100vh;
+  opacity: 65%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
 .cover-text {
   display: table-cell;
+  text-align: center;
   vertical-align: middle;
+}
+
+.disclaimer {
+  background-color: #eee;
+  border-radius: 5px;
+  bottom: 25px;
+  padding: 5px;
+  position: fixed;
+  right: 25px;
+  z-index: 100;
 }
 
 .map {
@@ -64,7 +98,9 @@ text {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #111;
   left: 236px;
+  text-align: center;
   top: 161px;
 }
 
@@ -77,15 +113,21 @@ text {
   padding: 60px;
 }
 
-.box.one .title{
+.box.one .title {
   font-size: 60px;
   padding-bottom: 40px;
   text-shadow: 2px 2px 8px #ddd;
 }
 
-.box.one .sub-title{
+.box.one .sub-title {
   font-size: 48px;
   text-shadow: 2px 2px 8px #ddd;
+}
+
+.box.one .credit {
+  font-size: 24px;
+  padding-top: 20px;
+  text-align: right;
 }
 
 .line.two {
@@ -99,23 +141,36 @@ text {
   top: 353px;
 }
 
-.box.two .yahoo {
-  /* position: absolute; */
-  top: 50%;
-  transform: translate(-50%, -100%);
+.box.two .contents {
+  height: 100vh;
 }
 
-.box.two .LSTM {
-  /* position: absolute; */
-  top: 50%;
+.box.two table {
+  left: 50%;
+  position: absolute;
+  top: 33%;
   transform: translate(-50%, -50%);
 }
 
-.box.two .chart {
-  /* position: absolute; */
-  width: 400px;
-  top: 50%;
-  transform: translate(75%, -50%);
+.box.two td {
+  background-color: white;
+  margin: auto;
+  max-height: 400px;
+  max-width: 700px;
+  opacity: 100%;
+  padding: 35px;
+  vertical-align: middle;
+}
+
+.box.two .logo {
+  margin: auto;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.box.two .finta {
+  font-size: 48px;
+  text-align: center
 }
 
 .line.three {
@@ -129,9 +184,37 @@ text {
   top: 542px;
 }
 
+.box.three .contents {
+  padding: 50px;
+}
+
 .box.three figure {
   display: inline-block;
   width: 49%;
+}
+
+.box.three h2 {
+  text-align: center;
+}
+
+.box.three table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.box.three th, .box.three td {
+  padding: 5px;
+}
+
+.box.three td {
+  background-color: white;
+  border: 1px solid #111;
+  opacity: 100%;
+  text-align: right;
+}
+
+.box.three ul {
+  padding: 50px;
 }
 
 .line.four {
@@ -145,19 +228,53 @@ text {
   top: 275px;
 }
 
+.box.four .contents {
+  font-size: 36px;
+  margin: 50px;
+}
+
+.box.four .no-border {
+  font-size: 36px;
+  vertical-align: middle;
+  width: 600px;
+}
+
+.box.four .no-border div {
+  text-align: left;
+}
+
+.box.four .nested-table {
+  border-collapse: collapse;
+  margin: 15px 0px;
+}
+
+.box.four .nested-table th, .box.four .nested-table td {
+  padding: 5px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.box.four .nested-table td {
+  background-color: white;
+  border: 1px solid #111;
+  opacity: 100%;
+}
+
+.box.four td.chosen {
+  background-color: yellow;
+}
+
 .line.five {
-  height: 522px;
-  left: 1179px;
+  height: 371px;
+  left: 1210px;
   top: 225px;
 }
 
 .box.five {
-  left: 1083px;
+  background-color: white;
+  color: #111;
+  left: 1114px;
   top: 117px;
-}
-
-.box.five .contents {
-  text-align: initial;
 }
 
 .box.five #ticker-symbol:hover {
@@ -182,7 +299,7 @@ text {
   border-radius: 10px;
   margin: 10px;
   padding: 15px;
-  width: 240px;
+  width: 350px;
 }
 
 .box.five .border {
@@ -199,9 +316,43 @@ text {
   cursor: pointer;
 }
 
-.box.five .chart {
+.box.five .output {
   display: inline-block;
-  height: 100vh;
+}
+
+.box.five .company-name {
+  background-color: lightgray;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 25px;
+  margin-left: 50%;
+  margin-top: 25px;
+  padding: 50px;
+  text-align: center;
+  transform: translate(-50%, 0%);
+  visibility: hidden;
+}
+
+.box.five .metrics {
+  vertical-align: top;
+  visibility: hidden;
+}
+
+.box.five table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.box.five th, .box.five td {
+  padding: 5px;
+}
+
+.box.five .metrics td {
+  border: 1px solid #111;
+  text-align: right;
+}
+
+.box.five .chart {
   padding: 50px;
 }
 
@@ -214,6 +365,83 @@ text {
   stroke: red;
   fill: none;
 }
+
+.box.five .tick text {
+  font-size: 16px;
+}
+
+.line.six {
+  height: 252px;
+  left: 1072px;
+  top: 565px;
+}
+
+.box.six {
+  left: 976px;
+  top: 457px;
+}
+
+.box.six .contents {
+  font-size: 36px;
+  line-height: 1.25em;
+  margin: 50px;
+}
+
+.box.six ul {
+  padding: 0px 50px;
+}
+
+.box.six table {
+  border-collapse: collapse;
+  margin: 50px 100px;
+}
+
+.box.six th, .box.six td {
+  padding: 5px;
+  font-size: 24px;
+  text-align: right;
+}
+
+.box.six td {
+  background-color: white;
+  border: 1px solid #111;
+  opacity: 100%;
+}
+
+.box.six .selected {
+  text-align: center;
+}
+
+.line.seven {
+  height: 190px;
+  left: 1499px;
+  top: 438px;
+}
+
+.box.seven {
+  left: 1403px;
+  top: 628px;
+}
+
+.box.seven .contents {
+  font-size: 36px;
+  left: 50%;
+  line-height: 59px;
+  margin-left: 40px;
+  margin-right: 400px;
+  margin-top: 200px;
+  position: absolute;
+  transform: translate(-50%, 0%);
+}
+
+.box.seven .todo img {
+  left: 50%;
+  max-height: 100vh;
+  position: absolute;
+  transform: translate(-50%, 0%);
+}
+
+
 
 .background-image {
   background-image: url("../images/grid_plot.svg");

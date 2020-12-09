@@ -8,10 +8,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+  <div class="disclaimer">The predictions within are for entertainment purposes only. None should be taken as
+    recommendations.</div>
   <div class="map">
 
     <div class="line one"></div>
@@ -23,46 +26,294 @@
           <br />
           Predicting Stock-Market Prices
         </h1>
-        <dh3 class="sub-title">Using LSTM to predict stock prices.</dh3>
+        <dh3 class="sub-title">Using machine learning to predict stock prices.</dh3>
+        <div class="credit">by Albert Lee
+          <br />
+          Metis - winter 2020
+        </div>
       </div>
     </div>
 
     <div class="line two"></div>
     <div class="box two" onclick="resizeViews.expand('two')">
-      <div class="cover"><span class="cover-text">Workflow</span></div>
+      <div class="cover"><span class="cover-text">The Tools</span></div>
+      <div class="filter"></div>
       <div class="contents">
-        <img class="yahoo" src="https://s.yimg.com/rz/p/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
-        <img class="LSTM" src="https://upload.wikimedia.org/wikipedia/commons/5/56/LSTM_cell.svg" />
-        <img class="chart" src="images/TSLA-shift-10.svg" />
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <img class="logo yahoo" src="images/yahoo_finance_en-US_s_f_pw_351X40_finance_2x.png" />
+              </td>
+              <td>
+                <div class="finta">FinTA</div>
+              </td>
+              <td>
+                <img class="logo python"
+                  src="https://logos-download.com/wp-content/uploads/2016/10/Python_logo_wordmark.png" />
+              </td>
+              <td>
+                <img class="logo tensorflow"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/2560px-TensorFlowLogo.svg.png" />
+              </td>
+              <td>
+                <img class="logo indicators"
+                  src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="line three"></div>
     <div class="box three" onclick="resizeViews.expand('three')">
-      <div class="cover"><span class="cover-text">Initial Results</span></div>
+      <div class="cover"><span class="cover-text">The Baseline</span></div>
+      <div class="filter"></div>
       <div class="contents">
         <figure>
-          <img src="images/TSLA-shift-10.svg" />
-          <figcaption>10: Accuracy Score: 0.726</figcaption>
+          <h2>Tesla, Inc. - TSLA</h2>
+          <img src="images/TSLA.201207.svg" />
+          <figcaption></figcaption>
+          <table>
+            <thead>
+              <tr>
+                <th>Mean Absolute Error</th>
+                <th>Accuracy Score</th>
+                <th>Predicted Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>27.46</td>
+                <td>0.448</td>
+                <td>$384.30</td>
+              </tr>
+            </tbody>
+          </table>
         </figure>
         <figure>
-          <img src="images/GE-shift-10.svg" />
-          <figcaption>10: Accuracy Score: 0.892</figcaption>
+          <h2>General Electric Company - GE</h2>
+          <img src="images/GE.201207.svg" />
+          <figcaption></figcaption>
+          <table>
+            <thead>
+              <tr>
+                <th>Mean Absolute Error</th>
+                <th>Accuracy Score</th>
+                <th>Predicted Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.57</td>
+                <td>0.505</td>
+                <td>$10.73</td>
+              </tr>
+            </tbody>
+          </table>
         </figure>
+        <ul>
+          <li>Model does not respond well to change in stock's character.</li>
+        </ul>
       </div>
     </div>
 
     <div class="line four"></div>
     <div class="box four" onclick="resizeViews.expand('four')">
-      <div class="cover"><span class="cover-text">Takeaways</span></div>
+      <div class="cover"><span class="cover-text">The Parameters</span></div>
+      <div class="filter"></div>
       <div class="contents">
-        What impact do indicators have on prediction?
+
+        <table>
+          <tr>
+            <td class="no-border">
+              <div>Adjusting the training window size.</div>
+            </td>
+            <td>
+              <table class="nested-table">
+                <thead>
+                  <tr>
+                    <th>Training Window Size</th>
+                    <th>Mean Absolute Error</th>
+                    <th>Accuracy Score</th>
+                    <th>Predicted Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>70</td>
+                    <td>27.46</td>
+                    <td>0.448</td>
+                    <td>$384.30</td>
+                  </tr>
+                  <tr>
+                    <td>40</td>
+                    <td>23.83</td>
+                    <td>0.456</td>
+                    <td>$413.43</td>
+                  </tr>
+                  <tr>
+                    <td>35</td>
+                    <td>19.95</td>
+                    <td>0.467</td>
+                    <td>$429.03</td>
+                  </tr>
+                  <tr>
+                    <td>30</td>
+                    <td>22.87</td>
+                    <td>0.460</td>
+                    <td>$427.37</td>
+                  </tr>
+                  <tr>
+                    <td>25</td>
+                    <td>20.51</td>
+                    <td>0.451</td>
+                    <td>$441.23</td>
+                  </tr>
+                  <tr>
+                    <td>20</td>
+                    <td>16.40</td>
+                    <td>0.478</td>
+                    <td>$473.08</td>
+                  </tr>
+                  <tr>
+                    <td class="chosen">15</td>
+                    <td>16.61</td>
+                    <td class="chosen">0.482</td>
+                    <td>$476.45</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>20.05</td>
+                    <td>0.449</td>
+                    <td>$457.88</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td class="no-border">
+              <div>Setting bi-directional to true.</div>
+            </td>
+            <td>
+              <table class="nested-table">
+                <thead>
+                  <tr>
+                    <th>Bi-directional</th>
+                    <th>Mean Absolute Error</th>
+                    <th>Accuracy</th>
+                    <th>Predicted Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="chosen">false</td>
+                    <td>16.61</td>
+                    <td class="chosen">0.482</td>
+                    <td>$476.45</td>
+                  </tr>
+                  <tr>
+                    <td>true</td>
+                    <td>28.28</td>
+                    <td>0.465</td>
+                    <td>$372.12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td class="no-border">
+              <div>Increasing the number of layers.</div>
+            </td>
+            <td>
+              <table class="nested-table">
+                <thead>
+                  <tr>
+                    <th>N_LAYERS</th>
+                    <th>Mean Absolute Error</th>
+                    <th>Accuracy</th>
+                    <th>Predicted Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="chosen">3</td>
+                    <td>16.61</td>
+                    <td class="chosen">0.482</td>
+                    <td>$476.45</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>24.29</td>
+                    <td>0.461</td>
+                    <td>$436.74</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>25.88</td>
+                    <td>0.462</td>
+                    <td>$426.30</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td class="no-border">
+              <div>Increasing the drop-out rate.</div>
+            </td>
+            <td>
+              <table class="nested-table">
+                <thead>
+                  <tr>
+                    <th>DROPOUT</th>
+                    <th>Mean Absolute Error</th>
+                    <th>Accuracy</th>
+                    <th>Predicted Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="chosen">0.4</td>
+                    <td>16.61</td>
+                    <td class="chosen">0.482</td>
+                    <td>$476.45</td>
+                  </tr>
+                  <tr>
+                    <td>0.5</td>
+                    <td>17.23</td>
+                    <td>0.469</td>
+                    <td>$470.12</td>
+                  </tr>
+                  <tr>
+                    <td>0.6</td>
+                    <td>18.64</td>
+                    <td>0.460</td>
+                    <td>$458.53</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
 
     <div class="line five"></div>
     <div class="box five" onclick="resizeViews.expand('five')">
-      <div class="cover"><span class="cover-text">Profit</span></div>
+      <div class="cover"><span class="cover-text">The Predictor</span></div>
       <div class="contents">
         <div class="parameters">
           <input id="ticker-symbol" type="text" placeholder="Enter ticker symbol" />
@@ -79,34 +330,300 @@
                 <label for="moving-average-200">200-day moving average</label>
               </div>
               <div class="checkbox-group">
+                <input id="SMM" class="checkbox" type="checkbox" />
+                <label for="SMM">Simple moving median</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="SSMA" class="checkbox" type="checkbox" />
+                <label for="SSMA">Smoothed simple moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="EMA" class="checkbox" type="checkbox" />
+                <label for="EMA">Exponential weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="DEMA" class="checkbox" type="checkbox" />
+                <label for="DEMA">Double exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="TEMA" class="checkbox" type="checkbox" />
+                <label for="TEMA">Triple exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="TRIMA" class="checkbox" type="checkbox" />
+                <label for="TRIMA">Triangular moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="TRIX" class="checkbox" type="checkbox" />
+                <label for="TRIX">d/dx triple exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="LWMA" class="checkbox" type="checkbox" />
+                <label for="LWMA">Linear weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VAMA" class="checkbox" type="checkbox" />
+                <label for="VAMA">Volume adjusted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VIDYA" class="checkbox" type="checkbox" />
+                <label for="VIDYA">Variable index dynamic average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ER" class="checkbox" type="checkbox" />
+                <label for="ER">Kaufman Efficiency</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="KAMA" class="checkbox" type="checkbox" />
+                <label for="KAMA">Kaufman's adaptive moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ZLEMA" class="checkbox" type="checkbox" />
+                <label for="ZLEMA">Zero-lag exponential moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="WMA" class="checkbox" type="checkbox" />
+                <label for="WMA">Weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="HMA" class="checkbox" type="checkbox" />
+                <label for="HMA">Hull moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="EVWMA" class="checkbox" type="checkbox" />
+                <label for="EVWMA">elastic volume weighted moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VWAP" class="checkbox" type="checkbox" />
+                <label for="VWAP">Volume weighted average price</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="SMMA" class="checkbox" type="checkbox" />
+                <label for="SMMA">Smoothed moving average</label>
+              </div>
+              <div class="checkbox-group not-implemented">
+                <input id="ALMA" class="checkbox" type="checkbox" />
+                <label for="ALMA">Arnaud Legoux moving average</label>
+              </div>
+              <div class="checkbox-group not-implemented">
+                <input id="MAMA" class="checkbox" type="checkbox" />
+                <label for="MAMA">MESA adaptive moving average</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="FRAMA" class="checkbox" type="checkbox" />
+                <label for="FRAMA">Fractal adaptive moving average</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="MACD" class="checkbox" type="checkbox" />
+                <label for="MACD">Moving average convergence-divergence</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="PPO" class="checkbox" type="checkbox" />
+                <label for="PPO">Percent price oscillator</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="VW_MACD" class="checkbox" type="checkbox" />
+                <label for="VW_MACD">Volume-weighted MACD</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="EV_MACD" class="checkbox" type="checkbox" />
+                <label for="EV_MACD">Elastic volume weighted MACD</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="MOM" class="checkbox" type="checkbox" />
+                <label for="MOM">Market momentum</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ROC" class="checkbox" type="checkbox" />
+                <label for="ROC">Rate-of-change indicator</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="VBM" class="checkbox" type="checkbox" />
+                <label for="VBM">Volatility-based-momentum indicator</label>
+              </div>
+              <div class="checkbox-group">
                 <input id="RSI" class="checkbox" type="checkbox" />
                 <label for="RSI">Relative-strength index</label>
               </div>
               <div class="checkbox-group">
-                <input id="percent-R" class="checkbox" type="checkbox" />
-                <label for="percent-R">Williams' %R</label>
+                <input id="IFT_RSI" class="checkbox" type="checkbox" />
+                <label for="IFT_RSI">Inverse Fisher Transform of RSI</label>
+              </div>
+              <div class="checkbox-group not-implemented">
+                <input id="SWI" class="checkbox" type="checkbox" />
+                <label for="SWI">Sine-wave indicator</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="DYMI" class="checkbox" type="checkbox" />
+                <label for="DYMI">Dynamic momentum index</label>
               </div>
               <div class="checkbox-group">
-                <input id="bollinger-bands" class="checkbox" type="checkbox" />
-                <label for="bollinger-bands">Bollinger bands</label>
+                <input id="TR" class="checkbox" type="checkbox" />
+                <label for="TR">True range</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="ATR" class="checkbox" type="checkbox" />
+                <label for="ATR">Average true range</label>
+              </div>
+              <div class="checkbox-group">
+                <input id="SAR" class="checkbox" type="checkbox" />
+                <label for="SAR">Stop and reverse</label>
+              </div>
+              <div class="checkbox-group data-frame">
+                <input id="PSAR" class="checkbox" type="checkbox" />
+                <label for="PSAR">Parabolic SAR</label>
               </div>
             </div>
           </div>
 
           <div id="get-prediction" class="btn" onclick="getChart()">Go!</div>
         </div>
-        <div class="chart">
-          <div id="my_dataviz"></div>
+        <div class="output">
+          <div class="company-name-container">
+            <h1 class="company-name"></h1>
+          </div>
+          <div class="metrics">
+            <table>
+              <thead>
+                <tr>
+                  <th>Days</th>
+                  <th>Mean absolute error</th>
+                  <th>Accuracy</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="days"></td>
+                  <td class="mae"></td>
+                  <td class="accuracy"></td>
+                  <td class="price"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="my_dataviz" class="chart"></div>
         </div>
       </div>
     </div>
+
+    <div class="line six"></div>
+    <div class="box six" onclick="resizeViews.expand('six')">
+      <div class="cover"><span class="cover-text">The Indicators</span></div>
+      <div class="filter"></div>
+      <div class="contents">
+        <div>Indicators - technical traders uses these to determine when to buy or sell a stock</div>
+        <br />
+        <ul>
+          <li>50-day moving average - the average of the closing prices of the past 50 days.</li>
+          <li>200-day moving average - the average of the closing prices of the past 200 days.</li>
+          <li>Relative strength indicator - the position of the most recent closing price relative to the last n closing
+            prices.</li>
+        </ul>
+        <br />
+        <div>What impact do indicators have on prediction?</div>
+        <table>
+          <thead>
+            <tr>
+              <th>MA50</th>
+              <th>MA200</th>
+              <th>RSI</th>
+              <th>Mean Absolute Error</th>
+              <th>Accuracy Score</th>
+              <th>Predicted Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="selected">X</td>
+              <td></td>
+              <td></td>
+              <td>16.58</td>
+              <td>0.472</td>
+              <td>$490.41</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="selected">X</td>
+              <td></td>
+              <td>17.05</td>
+              <td>0.444</td>
+              <td>$490.24</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="selected">X</td>
+              <td>69.45</td>
+              <td>0.484</td>
+              <td>$156.27</td>
+            </tr>
+            <tr>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td></td>
+              <td>34.64</td>
+              <td>0.464</td>
+              <td>$371.38</td>
+            </tr>
+            <tr>
+              <td class="selected">X</td>
+              <td></td>
+              <td class="selected">X</td>
+              <td>48.49</td>
+              <td>0.458</td>
+              <td>$272.02</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td>61.41</td>
+              <td>0.450</td>
+              <td>$200.23</td>
+            </tr>
+            <tr>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td class="selected">X</td>
+              <td>55.27</td>
+              <td>0.450</td>
+              <td>$269.62</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="line seven"></div>
+    <div class="box seven" onclick="resizeViews.expand('seven')">
+      <div class="cover"><span class="cover-text">The Future</span></div>
+      <div class="filter"></div>
+      <div class="todo">
+        <img src="https://miro.medium.com/max/4800/0*bP0GbIkuUFhxhzoo" />
+      </div>
+      <div class="contents">
+        <div><a href="https://medium.com/swlh/implement-a-websocket-using-flask-and-socket-io-python-76afa5bbeae1">Run
+            predictions with Facebook Prophet.</a></div>
+        <div>Add selectable parameters.</div>
+        <div>Add predictions to chart</div>
+        <div>Add options profit predictions</div>
+        <div>Add remainder of technical indicators to model.</div>
+        <div>Add ticker symbol lookup</div>
+        <div>Add web-socket</div>
+        <div>As indicators are derivatives, train model on them instead of stock prices.</div>
+        <div>Adjust model to accommodate indicators as they are actually used.</div>
+      </div>
+    </div>
+
   </div>
+
   <div class="background-image"></div>
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
   <script src="js/script.js"></script>
+  <script src="js/getPrediction.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
-from flask import Flask, request, render_template
+from flask import Flask, request
 from flask.helpers import send_from_directory
+from predictor import get_prediction
 
 app = Flask(__name__)
 
@@ -40,10 +41,8 @@ def send_media(path):
 
 
 @app.route('/getprediction')
-def get_prediction():
-    # return predict_personality(request.args.to_dict()['content'])
-    print(request.args.to_dict())
-    return "hello there"
+def get_pred():
+    return get_prediction(request.args.to_dict())
 
 
 # This just gets flask running
