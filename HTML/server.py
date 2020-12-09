@@ -1,4 +1,3 @@
-import json
 from flask import Flask, request
 from flask.helpers import send_from_directory
 from predictor import get_prediction
