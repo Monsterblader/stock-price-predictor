@@ -326,6 +326,29 @@ def get_prediction(args):
             current)), y_test[:-LOOKUP_STEP], y_test[LOOKUP_STEP:]))
         return accuracy_score(y_test, y_pred)
 
+    def save_data(model, data):
+        y_test = data["y_test"]
+        X_test = data["X_test"]
+        y_pred = model.predict(X_test)
+        company = yf.Ticker(ticker)
+        company_name = company.info['longName']
+
+        df = {}
+        df['test'] = np.squeeze(data["column_scaler"]["adjclose"].inverse_transform(
+            np.expand_dims(y_test, axis=0)))
+        df['pred'] = np.squeeze(data["column_scaler"]
+                                ["adjclose"].inverse_transform(y_pred))
+        df['accuracy'] = get_accuracy(model, data)
+        df['future_price'] = predict(model, data)
+        df['mean_absolute_error'] = data["column_scaler"]["adjclose"].inverse_transform([[mae]])[
+            0][0]
+        df['company'] = company_name
+
+        with open('data.txt', 'w') as outfile:
+            json.dump(df, outfile)
+
+    # save_data(model, data)
+
     mse, mae = model.evaluate(data["X_test"], data["y_test"], verbose=0)
 
     y_test = data["y_test"]
