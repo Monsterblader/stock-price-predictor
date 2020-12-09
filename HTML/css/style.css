@@ -1,0 +1,224 @@
+* {
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  /* font-size: 100%; */
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  /* text-shadow: 0px 1px 2px #111; */
+  vertical-align: baseline;
+}
+
+text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+
+.line {
+  border: 1px solid grey;
+  position: absolute;
+  width: 0px;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 108px;
+  opacity: 90%;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 192px;
+}
+
+.cover {
+  background-color: #fff;
+  display: table;
+  font-size: 24px;
+  height: 108px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+
+.cover-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.map {
+  position: fixed;
+}
+
+.line.one {
+  height: 526px;
+  left: 332px;
+  top: 269px;
+}
+
+.box.one {
+  background-image: url("http://i2.cdn.turner.com/money/dam/assets/160105144734-bear-bull-stock-market-780x439.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 236px;
+  top: 161px;
+}
+
+.box.one .contents {
+  background-color: #eee;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 60px;
+  opacity: 85%;
+  padding: 60px;
+}
+
+.box.one .title{
+  font-size: 60px;
+  padding-bottom: 40px;
+  text-shadow: 2px 2px 8px #ddd;
+}
+
+.box.one .sub-title{
+  font-size: 48px;
+  text-shadow: 2px 2px 8px #ddd;
+}
+
+.line.two {
+  height: 259px;
+  left: 549px;
+  top: 461px;
+}
+
+.box.two {
+  left: 453px;
+  top: 353px;
+}
+
+.box.two .yahoo {
+  /* position: absolute; */
+  top: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.box.two .LSTM {
+  /* position: absolute; */
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box.two .chart {
+  /* position: absolute; */
+  width: 400px;
+  top: 50%;
+  transform: translate(75%, -50%);
+}
+
+.line.three {
+  height: 154px;
+  left: 738px;
+  top: 650px;
+}
+
+.box.three {
+  left: 642px;
+  top: 542px;
+}
+
+.box.three figure {
+  display: inline-block;
+  width: 49%;
+}
+
+.line.four {
+  height: 427px;
+  left: 928px;
+  top: 383px;
+}
+
+.box.four {
+  left: 832px;
+  top: 275px;
+}
+
+.line.five {
+  height: 522px;
+  left: 1179px;
+  top: 225px;
+}
+
+.box.five {
+  left: 1083px;
+  top: 117px;
+}
+
+.box.five .contents {
+  text-align: initial;
+}
+
+.box.five #ticker-symbol:hover {
+  cursor: text;
+}
+
+.box.five .parameters {
+  background-color: lightgray;
+  display: inline-block;
+  height: 100vh;
+  padding: 50px;
+  vertical-align: top;
+}
+
+.box.five .title {
+  padding-bottom: 5px;
+}
+
+.box.five #ticker-symbol, .box.five .border, .box.five .btn {
+  background-color: #eee;
+  border: 1px solid #111;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  width: 240px;
+}
+
+.box.five .border {
+  display: inline-block;
+}
+
+.box.five .btn {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+}
+
+.box.five .btn:hover, .box.five input {
+  cursor: pointer;
+}
+
+.box.five .chart {
+  display: inline-block;
+  height: 100vh;
+  padding: 50px;
+}
+
+.box.five .line {
+  stroke: blue;
+  fill: none;
+}
+
+.box.five .line2 {
+  stroke: red;
+  fill: none;
+}
+
+.background-image {
+  background-image: url("../images/grid_plot.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
